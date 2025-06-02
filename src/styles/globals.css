@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Variables globales */
+:root {
+  --color-bg: #ffffff;
+  --color-fg: #171717;
+  --color-primary: #1E40AF;   /* Azul principal */
+  --color-secondary: #10B981; /* Verde secundario */
+  --color-gray: #4B5563;      /* Gris para textos secundarios */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #0a0a0a;
+    --color-fg: #ededed;
+  }
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-fg);
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
