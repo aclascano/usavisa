@@ -1,11 +1,19 @@
-import React from "react";
+// src/app/visa-us/page.tsx
+"use client";
 
-export default function VisaUSPage() {
+import React from "react";
+import { Navbar } from "../../components/organisms/Navbar";
+import { Footer } from "../../components/organisms/Footer";
+import { VisaUsWizard } from "../../components/templates/VisaUsWizard";
+
+export default function VisaUsPage() {
   return (
-    <section className="flex items-center justify-center h-screen bg-white">
-      <h1 className="text-4xl font-bold text-[var(--color-primary)]">
-        Visa USA – Página en Desarrollo
-      </h1>
-    </section>
+    <>
+      <Navbar />
+      <main className="pt-16 bg-neutral-light min-h-screen">
+        <VisaUsWizard />
+      </main>
+      <Footer />
+    </>
   );
 }

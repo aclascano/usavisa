@@ -1,37 +1,56 @@
+// src/app/page.tsx
 import React from "react";
 import { HeroSection } from "../components/templates/HeroSection";
 import { ServicesIconsSection } from "../components/templates/ServicesIconsSection";
 import { AboutUsSection } from "../components/templates/AboutUsSection";
-import { VisasUSSection } from "../components/templates/VisasUSSection";
-import { MidCTASection } from "../components/templates/MidCTASection";
-import { VisasCanadaSection } from "../components/templates/VisasCanadaSection";
+import { VisasTabsSection } from "../components/templates/VisasTabsSection";
 import { CompanyRegistrationSection } from "../components/templates/CompanyRegistrationSection";
-import { TestimonialsSection } from "../components/templates/TestimonialsSection";
+import { MidCTASection } from "../components/templates/MidCTASection";
+import { TestimonialsCarousel } from "../components/templates/TestimonialsCarousel";
 import { WhyChooseUsSection } from "../components/templates/WhyChooseUsSection";
 import { ContactFormSection } from "../components/templates/ContactFormSection";
 
 export default function HomePage() {
   return (
     <>
-      <HeroSection />
+      {/* Secciones identificadas con id para anclas */}
+      <section id="inicio">
+        <HeroSection />
+      </section>
 
-      <ServicesIconsSection />
+      <section id="servicios">
+        <ServicesIconsSection />
+      </section>
 
-      <AboutUsSection />
+      <section id="acerca">
+        <AboutUsSection />
+      </section>
 
-      <VisasUSSection />
+      <section id="visas">
+        <VisasTabsSection />
+      </section>
 
-      <MidCTASection />
+      <section id="empresa">
+        <CompanyRegistrationSection />
+      </section>
 
-      <VisasCanadaSection />
+      <section id="testimonios">
+        <TestimonialsCarousel />
+      </section>
 
-      <CompanyRegistrationSection />
+      <section id="why">
+        <WhyChooseUsSection />
+      </section>
 
-      <TestimonialsSection />
+      <section id="contacto">
+        <ContactFormSection />
+      </section>
 
-      <WhyChooseUsSection />
-
-      <ContactFormSection />
+      {/* Sección “Solicitar Ahora” anclada */}
+      <section id="solicitar">
+        {/* Aquí podrías duplicar el MidCTA o un componente específico para “Solicitar Ahora” */}
+        <MidCTASection />
+      </section>
     </>
   );
 }

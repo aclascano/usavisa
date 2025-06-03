@@ -1,27 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Variables globales */
 :root {
-  --color-bg: #ffffff;
-  --color-fg: #171717;
-  --color-primary: #1E40AF;   /* Azul principal */
-  --color-secondary: #10B981; /* Verde secundario */
-  --color-gray: #4B5563;      /* Gris para textos secundarios */
-}
+  /* Tipografía */
+  --font-sans: 'Poppins', sans-serif;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-bg: #0a0a0a;
-    --color-fg: #ededed;
-  }
+  /* Colores principales */
+  --color-primary: #0B1E3F;       /* Azul Oscuro */
+  --color-accent-red: #C8102E;    /* Rojo Vivo */
+  --color-neutral-light: #F5F5F5; /* Gris Polvo */
+  --color-neutral-dark: #333333;  /* Gris Antracita */
+
+  /* Acentos secundarios */
+  --color-accent-gold: #FFC107;   /* Dorado */
+  --color-accent-coral: #F97316;  /* Coral */
 }
 
 body {
-  background-color: var(--color-bg);
-  color: var(--color-fg);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  background-color: var(--color-neutral-light);
+  color: var(--color-neutral-dark);
   margin: 0;
   padding: 0;
 }

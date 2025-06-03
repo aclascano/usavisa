@@ -17,23 +17,37 @@ export function ContactFormSection() {
 
   const [success, setSuccess] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Aquí iría la lógica real de envío al backend...
+    // Aquí iría la lógica real de envío al backend
     console.log("Form submitted:", formData);
     setSuccess(true);
     setTimeout(() => setSuccess(false), 5000);
+    setFormData({
+      nombre: "",
+      email: "",
+      pais: "",
+      telefono: "",
+      servicio: "",
+      comoEnteraste: "",
+      mensaje: "",
+      captcha: "",
+    });
   };
 
   return (
-    <section className="py-16 bg-white" id="contacto">
-      <div className="max-w-3xl mx-auto px-4">
+    <section className="py-20 bg-neutralLight" id="contacto">
+      <div className="max-w-4xl mx-auto px-4">
         <motion.h2
-          className="text-3xl font-bold text-primary text-center mb-8"
+          className="text-3xl sm:text-4xl font-bold text-primary text-center mb-8"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
@@ -43,7 +57,7 @@ export function ContactFormSection() {
 
         {success && (
           <motion.div
-            className="bg-success text-white p-4 rounded-md mb-6 text-center"
+            className="bg-accent text-neutralDark p-4 rounded-lg mb-6 text-center"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
@@ -52,11 +66,11 @@ export function ContactFormSection() {
           </motion.div>
         )}
 
-        <form onSubmit={handleSubmit} className="space-y-6">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <form onSubmit={handleSubmit} className="space-y-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-              <label htmlFor="nombre" className="block text-gray-700 mb-1">
-                Nombre
+              <label htmlFor="nombre" className="block text-neutralDark mb-1">
+                Nombre completo
               </label>
               <input
                 type="text"
@@ -64,13 +78,14 @@ export function ContactFormSection() {
                 name="nombre"
                 value={formData.nombre}
                 onChange={handleChange}
-                className="w-full border border-neutralLight rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary"
+                className="w-full border border-neutralLight rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-accent2 transition"
+                placeholder="Tu nombre"
                 required
               />
             </div>
             <div>
-              <label htmlFor="email" className="block text-gray-700 mb-1">
-                Email
+              <label htmlFor="email" className="block text-neutralDark mb-1">
+                Correo electrónico
               </label>
               <input
                 type="email"
@@ -78,16 +93,17 @@ export function ContactFormSection() {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full border border-neutralLight rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary"
+                className="w-full border border-neutralLight rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-accent2 transition"
+                placeholder="correo@ejemplo.com"
                 required
               />
             </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-              <label htmlFor="pais" className="block text-gray-700 mb-1">
-                País
+              <label htmlFor="pais" className="block text-neutralDark mb-1">
+                País de residencia
               </label>
               <input
                 type="text"
@@ -95,12 +111,13 @@ export function ContactFormSection() {
                 name="pais"
                 value={formData.pais}
                 onChange={handleChange}
-                className="w-full border border-neutralLight rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary"
+                className="w-full border border-neutralLight rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-accent2 transition"
+                placeholder="Ej. Ecuador"
                 required
               />
             </div>
             <div>
-              <label htmlFor="telefono" className="block text-gray-700 mb-1">
+              <label htmlFor="telefono" className="block text-neutralDark mb-1">
                 Indicativo + Teléfono
               </label>
               <input
@@ -109,14 +126,15 @@ export function ContactFormSection() {
                 name="telefono"
                 value={formData.telefono}
                 onChange={handleChange}
-                className="w-full border border-neutralLight rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary"
+                className="w-full border border-neutralLight rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-accent2 transition"
+                placeholder="+593 9XXXXXXXX"
                 required
               />
             </div>
           </div>
 
           <div>
-            <label htmlFor="servicio" className="block text-gray-700 mb-1">
+            <label htmlFor="servicio" className="block text-neutralDark mb-1">
               Servicio de tu interés
             </label>
             <select
@@ -124,7 +142,7 @@ export function ContactFormSection() {
               name="servicio"
               value={formData.servicio}
               onChange={handleChange}
-              className="w-full border border-neutralLight rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary"
+              className="w-full border border-neutralLight rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-accent2 transition"
               required
             >
               <option value="">Selecciona</option>
@@ -137,7 +155,7 @@ export function ContactFormSection() {
           </div>
 
           <div>
-            <label htmlFor="comoEnteraste" className="block text-gray-700 mb-1">
+            <label htmlFor="comoEnteraste" className="block text-neutralDark mb-1">
               ¿Cómo te enteraste de nosotros?
             </label>
             <input
@@ -146,27 +164,29 @@ export function ContactFormSection() {
               name="comoEnteraste"
               value={formData.comoEnteraste}
               onChange={handleChange}
-              className="w-full border border-neutralLight rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary"
+              className="w-full border border-neutralLight rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-accent2 transition"
+              placeholder="Redes sociales, amigo, etc."
             />
           </div>
 
           <div>
-            <label htmlFor="mensaje" className="block text-gray-700 mb-1">
+            <label htmlFor="mensaje" className="block text-neutralDark mb-1">
               Explícanos tu caso
             </label>
             <textarea
               id="mensaje"
               name="mensaje"
-              rows={4}
+              rows={5}
               value={formData.mensaje}
               onChange={handleChange}
-              className="w-full border border-neutralLight rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary"
+              className="w-full border border-neutralLight rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-accent2 transition"
+              placeholder="Cuéntanos tu situación..."
             ></textarea>
           </div>
 
           <div>
-            <label htmlFor="captcha" className="block text-gray-700 mb-1">
-              3 + 6 =
+            <label htmlFor="captcha" className="block text-neutralDark mb-1">
+              3 + 6 = ?  {/* Validación matemática básica */}
             </label>
             <input
               type="text"
@@ -174,7 +194,8 @@ export function ContactFormSection() {
               name="captcha"
               value={formData.captcha}
               onChange={handleChange}
-              className="w-1/3 border border-neutralLight rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary"
+              className="w-1/3 border border-neutralLight rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-accent2 transition"
+              placeholder="Escribe 9"
               required
             />
           </div>
@@ -182,11 +203,12 @@ export function ContactFormSection() {
           <div className="text-center">
             <motion.button
               type="submit"
-              className="bg-primary text-white px-6 py-3 rounded hover:bg-primary/90 transition"
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
+              className="bg-primary text-white px-8 py-3 rounded-full font-medium hover:bg-primary/90 transition-all duration-300 shadow-sm hover:shadow-md"
+              initial={{ scale: 0.9 }}
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 300 }}
             >
-              Enviar
+              Enviar Mensaje
             </motion.button>
           </div>
         </form>

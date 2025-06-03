@@ -1,87 +1,94 @@
+// src/components/organisms/Navbar.tsx
 "use client";
 
-import { useState } from "react";
+import React from "react";
 import Link from "next/link";
-import Image from "next/image";
-import { NavLink } from "../molecules/NavLink";
-import { Button } from "../atoms/Button";
-import { useMobile } from "../../hooks/useMobile";
-import { motion } from "framer-motion";
+import { usePathname } from "next/navigation";
+import { ArrowRightOnRectangleIcon } from "@heroicons/react/24/outline";
 
 export function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
-  const isMobile = useMobile();
+  const path = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 bg-white shadow-md">
+    <header className="fixed top-0 left-0 w-full z-50 bg-white shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
-        {/* Logo animado */}
-        <Link href="/" className="flex-shrink-0 flex items-center">
-          <motion.div
-            initial={{ scale: 0.9 }}
-            whileHover={{ scale: 1.1 }}
-            transition={{ type: "spring", stiffness: 300 }}
-          >
-            <Image
-              src="/logo.png"
+        {/* Logo */}
+        <div className="flex-shrink-0">
+          <Link href="/">
+            <img
+              src="/logo_transparent.png"
               alt="VisaApp Logo"
-              width={150}
-              height={50}
-              priority
+              className="h-8 w-auto cursor-pointer"
             />
-          </motion.div>
-        </Link>
+          </Link>
+        </div>
 
         {/* Menú Desktop */}
-        {!isMobile && (
-          <nav className="flex space-x-6">
-            <NavLink href="/" label="Inicio" />
-            <NavLink href="/visa-us" label="Visa EE UU" />
-            <NavLink href="/visa-ca" label="Visa Canadá" />
-            <NavLink href="/services" label="Servicios" />
-            <NavLink href="/#contacto" label="Contacto" />
-          </nav>
-        )}
-
-        {/* Botón CTA Desktop */}
-        {!isMobile && (
-          <div>
-            <Button variant="secondary">Solicitar Ahora</Button>
-          </div>
-        )}
-
-        {/* Toggle Mobile */}
-        {isMobile && (
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="text-neutralDark hover:text-primary focus:outline-none text-2xl"
+        <nav className="hidden md:flex space-x-6">
+          <Link
+            href="/"
+            className={`text-neutral-dark hover:text-primary transition-colors duration-200 font-medium ${
+              path === "/" ? "text-primary font-semibold" : ""
+            }`}
           >
-            {isOpen ? "✕" : "☰"}
-          </button>
-        )}
-      </div>
+            Inicio
+          </Link>
+          <Link
+            href="/#servicios"
+            className="text-neutral-dark hover:text-primary transition-colors duration-200 font-medium"
+          >
+            Servicios
+          </Link>
+          <Link
+            href="/#acerca"
+            className="text-neutral-dark hover:text-primary transition-colors duration-200 font-medium"
+          >
+            Acerca de
+          </Link>
+          <Link
+            href="/#visas"
+            className="text-neutral-dark hover:text-primary transition-colors duration-200 font-medium"
+          >
+            Visas
+          </Link>
+          <Link
+            href="/#empresa"
+            className="text-neutral-dark hover:text-primary transition-colors duration-200 font-medium"
+          >
+            Crear Empresa
+          </Link>
+          <Link
+            href="/#testimonios"
+            className="text-neutral-dark hover:text-primary transition-colors duration-200 font-medium"
+          >
+            Testimonios
+          </Link>
+          <Link
+            href="/#contacto"
+            className="text-neutral-dark hover:text-primary transition-colors duration-200 font-medium"
+          >
+            Contacto
+          </Link>
+        </nav>
 
-      {/* Off-Canvas Mobile Menu */}
-      {isMobile && isOpen && (
-        <motion.div
-          className="absolute top-16 right-0 w-3/4 h-[calc(100vh-4rem)] bg-white shadow-lg"
-          initial={{ x: "100%" }}
-          animate={{ x: 0 }}
-          exit={{ x: "100%" }}
-          transition={{ type: "tween", duration: 0.25 }}
-        >
-          <nav className="flex flex-col p-4 space-y-4">
-            <NavLink href="/" label="Inicio" />
-            <NavLink href="/visa-us" label="Visa EE UU" />
-            <NavLink href="/visa-ca" label="Visa Canadá" />
-            <NavLink href="/services" label="Servicios" />
-            <NavLink href="/#contacto" label="Contacto" />
-            <Button variant="secondary" className="mt-4">
-              Solicitar Ahora
-            </Button>
-          </nav>
-        </motion.div>
-      )}
+        {/* Botón “Solicitar Ahora” */}
+        <div className="hidden md:flex">
+          <Link
+            href="/solicitar"
+            className="inline-flex items-center bg-accent-red text-white px-4 py-2 rounded-full hover:bg-accent-coral transition-all duration-200 shadow-lg"
+          >
+            <ArrowRightOnRectangleIcon className="h-5 w-5 mr-1" />
+            Solicitar Ahora
+          </Link>
+        </div>
+
+        {/* Menú Mobile (solo icono hamburguesa de ejemplo) */}
+        <div className="md:hidden">
+          <button className="text-neutral-dark hover:text-primary">
+            ☰
+          </button>
+        </div>
+      </div>
     </header>
   );
 }

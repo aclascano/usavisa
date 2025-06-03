@@ -12,9 +12,9 @@ export function Button({
 }: ButtonProps) {
   const baseClasses = "px-4 py-2 font-medium rounded-md transition ";
   const variants: Record<string, string> = {
-    primary: "bg-[var(--color-primary)] text-white hover:bg-[var(--color-primary)]/90",
-    secondary: "bg-[var(--color-secondary)] text-white hover:bg-[var(--color-secondary)]/90",
-    outline: "border border-[var(--color-primary)] text-[var(--color-primary)] hover:bg-[var(--color-primary)]/10",
+    primary: "bg-primary text-white hover:bg-accent2",
+    secondary: "bg-secondary text-white hover:bg-secondary/90",
+    outline: "border border-primary text-primary hover:bg-primary/10",
   };
   return (
     <button className={`${baseClasses}${variants[variant]} ${className}`} {...props}>

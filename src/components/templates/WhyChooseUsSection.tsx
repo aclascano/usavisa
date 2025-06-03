@@ -2,44 +2,79 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import {
+  UsersIcon,
+  ShieldCheckIcon,
+  ClockIcon,
+  BanknotesIcon,
+} from "@heroicons/react/24/outline";
 
 export function WhyChooseUsSection() {
   return (
-    <section className="py-16 bg-neutralLight">
-      <div className="max-w-4xl mx-auto px-4 text-center space-y-6">
+    <section className="py-20 bg-white">
+      <div className="max-w-5xl mx-auto px-4">
         <motion.h2
-          className="text-3xl font-bold text-primary"
+          className="text-3xl sm:text-4xl font-bold text-primary text-center mb-12"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
         >
-          ¿POR QUÉ <span className="text-secondary">ELEGIRNOS</span>?
+          ¿Por Qué <span className="text-secondary">Elegirnos?</span>
         </motion.h2>
-        <motion.p
-          className="text-gray-700"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.3, duration: 0.7 }}
-        >
-          Con USAVISA obtendrás el acompañamiento de un equipo de expertos en cada paso, ahorrando tiempo y dinero.
-        </motion.p>
-        <motion.p
-          className="text-gray-700"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.5, duration: 0.7 }}
-        >
-          Contamos con profesionales dedicados a tramitar tu solicitud de manera ágil y rápida desde el primer instante. No importa dónde te encuentres, 
-          nossos servicios son 100% virtuales, tan eficientes como si estuvieras en nuestras oficinas.
-        </motion.p>
-        <motion.p
-          className="text-gray-700"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.7, duration: 0.7 }}
-        >
-          Solo necesitas tu pasaporte para iniciar el trámite y asistir al día de la entrevista con el cónsul. ¡Te ayudamos a cumplir tu meta de viajar!
-        </motion.p>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <motion.div
+            className="flex flex-col items-center bg-neutralLight p-8 rounded-xl hover:shadow-lg transition-shadow duration-300"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.7 }}
+          >
+            <UsersIcon className="h-10 w-10 text-accent mb-4" />
+            <h3 className="text-lg font-semibold text-neutralDark">Equipo Experto</h3>
+            <p className="mt-2 text-gray-600 text-center">
+              Profesionales certificados y con amplia experiencia en inmigración.
+            </p>
+          </motion.div>
+
+          <motion.div
+            className="flex flex-col items-center bg-neutralLight p-8 rounded-xl hover:shadow-lg transition-shadow duration-300"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.7 }}
+          >
+            <ShieldCheckIcon className="h-10 w-10 text-accent mb-4" />
+            <h3 className="text-lg font-semibold text-neutralDark">Proceso Seguro</h3>
+            <p className="mt-2 text-gray-600 text-center">
+              Tus datos y documentos 100% protegidos bajo normativas internacionales.
+            </p>
+          </motion.div>
+
+          <motion.div
+            className="flex flex-col items-center bg-neutralLight p-8 rounded-xl hover:shadow-lg transition-shadow duration-300"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6, duration: 0.7 }}
+          >
+            <ClockIcon className="h-10 w-10 text-accent mb-4" />
+            <h3 className="text-lg font-semibold text-neutralDark">Respuesta Rápida</h3>
+            <p className="mt-2 text-gray-600 text-center">
+              Atención inmediata y seguimiento constante a tu solicitud.
+            </p>
+          </motion.div>
+
+          <motion.div
+            className="flex flex-col items-center bg-neutralLight p-8 rounded-xl hover:shadow-lg transition-shadow duration-300"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8, duration: 0.7 }}
+          >
+            <BanknotesIcon className="h-10 w-10 text-accent mb-4" />
+            <h3 className="text-lg font-semibold text-neutralDark">Costos Transparentes</h3>
+            <p className="mt-2 text-gray-600 text-center">
+              Paquetes claros sin cobros ocultos ni costos adicionales.
+            </p>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
