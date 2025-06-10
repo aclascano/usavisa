@@ -16,7 +16,7 @@ export function HeroSection() {
 
   return (
     <section id="inicio" className="relative h-screen overflow-hidden">
-      {/* Imagen de fondo en parallax */}
+      {/* Fondo en parallax */}
       <motion.div
         className="absolute inset-0 bg-cover bg-center"
         style={{
@@ -27,8 +27,16 @@ export function HeroSection() {
         }}
       />
 
-      {/* Overlay degradado */}
-      <div className="absolute inset-0 bg-gradient-to-b from-neutral-dark/60 to-neutral-dark/80" />
+      {/* Overlay degradado semi-oscuro con colores patrios (EE UU y Canadá) */}
+      <div
+        className="
+          absolute inset-0
+          bg-gradient-to-br
+          from-[#041E42]/80
+          via-[#E31B23]/60
+          to-[#FFC72C]/80
+        "
+      />
 
       {/* Contenido principal */}
       <div className="relative z-10 flex flex-col lg:flex-row items-center justify-center h-full max-w-7xl mx-auto px-4">
@@ -41,8 +49,8 @@ export function HeroSection() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             Tu Puerta de Entrada a los&nbsp;
-            <span className="text-accent-red">EE UU</span> y&nbsp;
-            <span className="text-accent-red">Canadá</span>
+            <span className="text-[#E31B23]">EE UU</span> y&nbsp;
+            <span className="text-[#E31B23]">Canadá</span>
           </motion.h1>
 
           <motion.p
@@ -53,7 +61,9 @@ export function HeroSection() {
           >
             Servicios de inmigración profesionales, confiables y rápidos.
             <br />
-            <span className="font-semibold">¡Tu tranquilidad es nuestra prioridad!</span>
+            <span className="font-semibold">
+              ¡Tu tranquilidad es nuestra prioridad!
+            </span>
           </motion.p>
 
           <motion.div
@@ -64,13 +74,29 @@ export function HeroSection() {
           >
             <a
               href="#visas"
-              className="inline-block bg-primary text-white px-6 py-3 rounded-full hover:bg-accent-gold transition-colors duration-200 shadow-lg"
+              className="
+                inline-block
+                bg-[#041E42]
+                text-white
+                px-6 py-3
+                rounded-full
+                hover:bg-[#E31B23]
+                transition-colors duration-200 shadow-lg
+              "
             >
               Visa EE UU
             </a>
             <a
               href="#visas"
-              className="inline-block bg-primary text-white px-6 py-3 rounded-full hover:bg-accent-gold transition-colors duration-200 shadow-lg"
+              className="
+                inline-block
+                bg-[#041E42]
+                text-white
+                px-6 py-3
+                rounded-full
+                hover:bg-[#E31B23]
+                transition-colors duration-200 shadow-lg
+              "
             >
               Visa Canadá
             </a>
@@ -85,7 +111,14 @@ export function HeroSection() {
           >
             <a
               href="#solicitar"
-              className="inline-flex items-center bg-accent-red text-white px-6 py-3 rounded-full hover:bg-accent-coral transition-all duration-200 shadow-lg"
+              className="
+                inline-flex items-center
+                bg-[#E31B23] text-white
+                px-6 py-3
+                rounded-full
+                hover:bg-[#C91B1B]
+                transition-all duration-200 shadow-lg
+              "
             >
               <ArrowRightOnRectangleIcon className="h-5 w-5 mr-2" />
               Solicitar Ahora
@@ -99,20 +132,20 @@ export function HeroSection() {
             animate={{ opacity: 1 }}
             transition={{ delay: 1.2, duration: 0.8, ease: "easeOut" }}
           >
-            <div className="flex items-center bg-neutral-dark/50 p-4 rounded-lg space-x-3">
-              <ShieldCheckIcon className="h-8 w-8 text-accent-gold" />
+            <div className="flex items-center bg-[#041E42]/50 p-4 rounded-lg space-x-3">
+              <ShieldCheckIcon className="h-8 w-8 text-[#FFC72C]" />
               <span className="text-white font-medium">
                 Asesoría 100% personalizada
               </span>
             </div>
-            <div className="flex items-center bg-neutral-dark/50 p-4 rounded-lg space-x-3">
-              <AcademicCapIcon className="h-8 w-8 text-accent-gold" />
+            <div className="flex items-center bg-[#041E42]/50 p-4 rounded-lg space-x-3">
+              <AcademicCapIcon className="h-8 w-8 text-[#FFC72C]" />
               <span className="text-white font-medium">
                 +10 años de experiencia
               </span>
             </div>
-            <div className="flex items-center bg-neutral-dark/50 p-4 rounded-lg space-x-3">
-              <ClockIcon className="h-8 w-8 text-accent-gold" />
+            <div className="flex items-center bg-[#041E42]/50 p-4 rounded-lg space-x-3">
+              <ClockIcon className="h-8 w-8 text-[#FFC72C]" />
               <span className="text-white font-medium">
                 Proceso ágil y seguro
               </span>

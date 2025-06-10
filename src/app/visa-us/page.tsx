@@ -9,11 +9,9 @@ import { VisaUsWizard } from "../../components/templates/VisaUsWizard";
 export default function VisaUsPage() {
   return (
     <>
-      <Navbar />
       <main className="pt-16 bg-neutral-light min-h-screen">
         <VisaUsWizard />
       </main>
-      <Footer />
     </>
   );
 }

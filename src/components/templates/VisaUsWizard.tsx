@@ -7,7 +7,6 @@ import {
   IdentificationIcon,
   GlobeAmericasIcon,
   HomeIcon,
-  CalendarIcon,
   AcademicCapIcon,
   BriefcaseIcon,
   PaperAirplaneIcon,
@@ -114,7 +113,7 @@ type FormDataType = {
 };
 
 export function VisaUsWizard() {
-  const [step, setStep] = useState(1);
+  const [step, setStep] = useState<number>(1);
   const totalSteps = 6;
 
   const [formData, setFormData] = useState<FormDataType>({
@@ -206,14 +205,23 @@ export function VisaUsWizard() {
 
   const [photoPreview, setPhotoPreview] = useState<string | null>(null);
 
-  // Para cargar lista de países, estados y ciudades
-  const [countryOptions, setCountryOptions] = useState<{ label: string; value: string }[]>([]);
-  const [stateOptions, setStateOptions] = useState<{ label: string; value: string }[]>([]);
-  const [cityOptions, setCityOptions] = useState<{ label: string; value: string }[]>([]);
+  // Listas de países, estados y ciudades
+  const [countryOptions, setCountryOptions] = useState<
+    { label: string; value: string }[]
+  >([]);
+  const [stateOptions, setStateOptions] = useState<
+    { label: string; value: string }[]
+  >([]);
+  const [cityOptions, setCityOptions] = useState<
+    { label: string; value: string }[]
+  >([]);
 
-  const [selectedCountry, setSelectedCountry] = useState<SingleValue<{ label: string; value: string }>>(null);
-  const [selectedState, setSelectedState] = useState<SingleValue<{ label: string; value: string }>>(null);
-  const [selectedCity, setSelectedCity] = useState<SingleValue<{ label: string; value: string }>>(null);
+  const [selectedCountry, setSelectedCountry] =
+    useState<SingleValue<{ label: string; value: string }>>(null);
+  const [selectedState, setSelectedState] =
+    useState<SingleValue<{ label: string; value: string }>>(null);
+  const [selectedCity, setSelectedCity] =
+    useState<SingleValue<{ label: string; value: string }>>(null);
 
   // Modal de éxito
   const [showSuccessModal, setShowSuccessModal] = useState(false);
@@ -230,10 +238,12 @@ export function VisaUsWizard() {
   useEffect(() => {
     if (selectedCountry) {
       // Obtener estados del país seleccionado
-      const states = State.getStatesOfCountry(selectedCountry.value).map((s: any) => ({
-        label: s.name,
-        value: s.isoCode,
-      }));
+      const states = State.getStatesOfCountry(selectedCountry.value).map(
+        (s: any) => ({
+          label: s.name,
+          value: s.isoCode,
+        })
+      );
       setStateOptions(states);
       setSelectedState(null);
       setCityOptions([]);
@@ -293,9 +303,16 @@ export function VisaUsWizard() {
     setShowSuccessModal(true);
   };
 
-  // ------- Barra de progreso mejorada sin errores de Tailwind -------
+  // ------- Barra de progreso -------
   function ProgressBar() {
-    const labels = ["Personal", "Pasaporte", "Viaje", "Familiar", "Estudios", "Laboral"];
+    const labels = [
+      "Personal",
+      "Pasaporte",
+      "Viaje",
+      "Familiar",
+      "Estudios",
+      "Laboral",
+    ];
     return (
       <div className="mb-8">
         <div className="flex items-center">
@@ -308,7 +325,11 @@ export function VisaUsWizard() {
                 <div className="flex flex-col items-center z-10">
                   <div
                     className={`h-8 w-8 rounded-full flex items-center justify-center ${
-                      completed ? "bg-primary" : active ? "bg-accent-red" : "bg-neutral-dark/20"
+                      completed
+                        ? "bg-primary"
+                        : active
+                        ? "bg-accent-red"
+                        : "bg-neutral-dark/20"
                     }`}
                   >
                     <span className="text-white font-semibold">{stepNum}</span>
@@ -332,19 +353,23 @@ export function VisaUsWizard() {
     );
   }
 
-  // ------- Cada “Paso” del Wizard, sin AnimatePresence para evitar reinicios de inputs -------
+  // ------- Cada “Paso” del Wizard (se mantienen inputs sin animaciones de desmontaje) -------
+
   const Paso1 = (
     <div className="space-y-6" key="paso1">
       <div className="flex items-center space-x-3 mb-4">
         <UserIcon className="h-8 w-8 text-primary" />
-        <h2 className="text-2xl font-semibold text-primary">Información Personal</h2>
+        <h2 className="text-2xl font-semibold text-primary">
+          Información Personal
+        </h2>
       </div>
 
       {/* Fotografía con preview centrada */}
       <div className="flex justify-center mb-6 bg-white rounded-xl shadow-lg p-4">
         <div className="text-center">
           <label className="block text-neutral-dark mb-1">
-            Foto Reciente (Menor a 6 meses) <span className="text-accent-red">*</span>
+            Foto Reciente (Menor a 6 meses){" "}
+            <span className="text-accent-red">*</span>
           </label>
           <input
             type="file"
@@ -415,7 +440,10 @@ export function VisaUsWizard() {
 
         {/* Teléfono Fijo */}
         <div>
-          <label htmlFor="telefonoFijo" className="block text-neutral-dark mb-1">
+          <label
+            htmlFor="telefonoFijo"
+            className="block text-neutral-dark mb-1"
+          >
             Teléfono Fijo
           </label>
           <input
@@ -451,7 +479,10 @@ export function VisaUsWizard() {
 
         {/* Fecha de Nacimiento */}
         <div>
-          <label htmlFor="fechaNacimiento" className="block text-neutral-dark mb-1">
+          <label
+            htmlFor="fechaNacimiento"
+            className="block text-neutral-dark mb-1"
+          >
             Fecha de Nacimiento
           </label>
           <input
@@ -466,7 +497,10 @@ export function VisaUsWizard() {
 
         {/* Lugar de Nacimiento */}
         <div>
-          <label htmlFor="lugarNacimiento" className="block text-neutral-dark mb-1">
+          <label
+            htmlFor="lugarNacimiento"
+            className="block text-neutral-dark mb-1"
+          >
             Lugar de Nacimiento
           </label>
           <input
@@ -482,7 +516,10 @@ export function VisaUsWizard() {
 
         {/* Tipo de Documento */}
         <div>
-          <label htmlFor="tipoDocumento" className="block text-neutral-dark mb-1">
+          <label
+            htmlFor="tipoDocumento"
+            className="block text-neutral-dark mb-1"
+          >
             Tipo de Documento
           </label>
           <input
@@ -498,7 +535,10 @@ export function VisaUsWizard() {
 
         {/* Número de Documento */}
         <div>
-          <label htmlFor="numeroDocumento" className="block text-neutral-dark mb-1">
+          <label
+            htmlFor="numeroDocumento"
+            className="block text-neutral-dark mb-1"
+          >
             Número de Documento
           </label>
           <input
@@ -514,7 +554,10 @@ export function VisaUsWizard() {
 
         {/* País de Residencia */}
         <div>
-          <label htmlFor="paisResidencia" className="block text-neutral-dark mb-1">
+          <label
+            htmlFor="paisResidencia"
+            className="block text-neutral-dark mb-1"
+          >
             País de Residencia
           </label>
           <Select
@@ -553,7 +596,10 @@ export function VisaUsWizard() {
               value={selectedCity}
               onChange={(option) => {
                 setSelectedCity(option as any);
-                setFormData((prev) => ({ ...prev, ciudad: (option as any).value }));
+                setFormData((prev) => ({
+                  ...prev,
+                  ciudad: (option as any).value,
+                }));
               }}
               placeholder="Selecciona ciudad..."
               className="z-10"
@@ -623,7 +669,10 @@ export function VisaUsWizard() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label htmlFor="numeroPasaporte" className="block text-neutral-dark mb-1">
+          <label
+            htmlFor="numeroPasaporte"
+            className="block text-neutral-dark mb-1"
+          >
             Número de Pasaporte
           </label>
           <input
@@ -638,7 +687,10 @@ export function VisaUsWizard() {
         </div>
 
         <div>
-          <label htmlFor="lugarEmision" className="block text-neutral-dark mb-1">
+          <label
+            htmlFor="lugarEmision"
+            className="block text-neutral-dark mb-1"
+          >
             País y Ciudad de Emisión
           </label>
           <input
@@ -653,7 +705,10 @@ export function VisaUsWizard() {
         </div>
 
         <div>
-          <label htmlFor="fechaEmision" className="block text-neutral-dark mb-1">
+          <label
+            htmlFor="fechaEmision"
+            className="block text-neutral-dark mb-1"
+          >
             Fecha de Emisión
           </label>
           <input
@@ -667,7 +722,10 @@ export function VisaUsWizard() {
         </div>
 
         <div>
-          <label htmlFor="fechaCaducidad" className="block text-neutral-dark mb-1">
+          <label
+            htmlFor="fechaCaducidad"
+            className="block text-neutral-dark mb-1"
+          >
             Fecha de Caducidad
           </label>
           <input
@@ -681,7 +739,10 @@ export function VisaUsWizard() {
         </div>
 
         <div className="sm:col-span-2">
-          <label htmlFor="perdioPasaporte" className="block text-neutral-dark mb-1">
+          <label
+            htmlFor="perdioPasaporte"
+            className="block text-neutral-dark mb-1"
+          >
             ¿Ha perdido alguna vez su pasaporte?
           </label>
           <select
@@ -711,7 +772,10 @@ export function VisaUsWizard() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label htmlFor="fechaPrevioViaje" className="block text-neutral-dark mb-1">
+          <label
+            htmlFor="fechaPrevioViaje"
+            className="block text-neutral-dark mb-1"
+          >
             Fecha Previa del Viaje
           </label>
           <input
@@ -725,7 +789,10 @@ export function VisaUsWizard() {
         </div>
 
         <div>
-          <label htmlFor="duracionEstadia" className="block text-neutral-dark mb-1">
+          <label
+            htmlFor="duracionEstadia"
+            className="block text-neutral-dark mb-1"
+          >
             Duración de estadía (días)
           </label>
           <input
@@ -740,7 +807,10 @@ export function VisaUsWizard() {
         </div>
 
         <div>
-          <label htmlFor="ciudadHospedaje" className="block text-neutral-dark mb-1">
+          <label
+            htmlFor="ciudadHospedaje"
+            className="block text-neutral-dark mb-1"
+          >
             Ciudad donde se hospedará
           </label>
           <input
@@ -755,7 +825,10 @@ export function VisaUsWizard() {
         </div>
 
         <div>
-          <label htmlFor="direccionHospedaje" className="block text-neutral-dark mb-1">
+          <label
+            htmlFor="direccionHospedaje"
+            className="block text-neutral-dark mb-1"
+          >
             Dirección del hospedaje
           </label>
           <input
@@ -770,7 +843,10 @@ export function VisaUsWizard() {
         </div>
 
         <div>
-          <label htmlFor="telefonoHospedaje" className="block text-neutral-dark mb-1">
+          <label
+            htmlFor="telefonoHospedaje"
+            className="block text-neutral-dark mb-1"
+          >
             Teléfono del hospedaje
           </label>
           <input
@@ -800,7 +876,10 @@ export function VisaUsWizard() {
         </div>
 
         <div className="sm:col-span-2">
-          <label htmlFor="acompanantes" className="block text-neutral-dark mb-1">
+          <label
+            htmlFor="acompanantes"
+            className="block text-neutral-dark mb-1"
+          >
             Acompañantes y parentesco (si aplica)
           </label>
           <textarea
@@ -830,7 +909,9 @@ export function VisaUsWizard() {
         onRemove={(id) =>
           setFormData((prev) => ({
             ...prev,
-            viajesUltimosCincoAnios: prev.viajesUltimosCincoAnios.filter((v) => v.id !== id),
+            viajesUltimosCincoAnios: prev.viajesUltimosCincoAnios.filter(
+              (v) => v.id !== id
+            ),
           }))
         }
         onUpdate={(id, field, value) =>
@@ -849,7 +930,9 @@ export function VisaUsWizard() {
     <div className="space-y-6" key="paso4">
       <div className="flex items-center space-x-3 mb-4">
         <HomeIcon className="h-8 w-8 text-accent-gold" />
-        <h2 className="text-2xl font-semibold text-accent-gold">Información Familiar</h2>
+        <h2 className="text-2xl font-semibold text-accent-gold">
+          Información Familiar
+        </h2>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -883,7 +966,10 @@ export function VisaUsWizard() {
           />
         </div>
         <div>
-          <label htmlFor="padreFechaNacimiento" className="block text-neutral-dark mb-1">
+          <label
+            htmlFor="padreFechaNacimiento"
+            className="block text-neutral-dark mb-1"
+          >
             Fecha Nacimiento Padre
           </label>
           <input
@@ -926,7 +1012,10 @@ export function VisaUsWizard() {
           />
         </div>
         <div>
-          <label htmlFor="madreFechaNacimiento" className="block text-neutral-dark mb-1">
+          <label
+            htmlFor="madreFechaNacimiento"
+            className="block text-neutral-dark mb-1"
+          >
             Fecha Nacimiento Madre
           </label>
           <input
@@ -941,7 +1030,10 @@ export function VisaUsWizard() {
 
         {/* Cónyuge */}
         <div>
-          <label htmlFor="conyugeNombre" className="block text-neutral-dark mb-1">
+          <label
+            htmlFor="conyugeNombre"
+            className="block text-neutral-dark mb-1"
+          >
             Nombre Cónyuge
           </label>
           <input
@@ -955,7 +1047,10 @@ export function VisaUsWizard() {
           />
         </div>
         <div>
-          <label htmlFor="conyugeCiudad" className="block text-neutral-dark mb-1">
+          <label
+            htmlFor="conyugeCiudad"
+            className="block text-neutral-dark mb-1"
+          >
             Ciudad Nacimiento Cónyuge
           </label>
           <input
@@ -969,7 +1064,10 @@ export function VisaUsWizard() {
           />
         </div>
         <div>
-          <label htmlFor="conyugeFechaNacimiento" className="block text-neutral-dark mb-1">
+          <label
+            htmlFor="conyugeFechaNacimiento"
+            className="block text-neutral-dark mb-1"
+          >
             Fecha Nacimiento Cónyuge
           </label>
           <input
@@ -989,15 +1087,22 @@ export function VisaUsWizard() {
     <div className="space-y-6" key="paso5">
       <div className="flex items-center space-x-3 mb-4">
         <AcademicCapIcon className="h-8 w-8 text-accent-gold" />
-        <h2 className="text-2xl font-semibold text-accent-gold">Información de Estudios</h2>
+        <h2 className="text-2xl font-semibold text-accent-gold">
+          Información de Estudios
+        </h2>
       </div>
 
       {/* Bachillerato */}
       <div className="space-y-4">
-        <h3 className="text-xl font-semibold text-neutral-dark mb-2">Bachillerato</h3>
+        <h3 className="text-xl font-semibold text-neutral-dark mb-2">
+          Bachillerato
+        </h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label htmlFor="colegioBachillerato" className="block text-neutral-dark mb-1">
+            <label
+              htmlFor="colegioBachillerato"
+              className="block text-neutral-dark mb-1"
+            >
               Nombre del colegio
             </label>
             <input
@@ -1011,7 +1116,10 @@ export function VisaUsWizard() {
             />
           </div>
           <div>
-            <label htmlFor="colegioDireccion" className="block text-neutral-dark mb-1">
+            <label
+              htmlFor="colegioDireccion"
+              className="block text-neutral-dark mb-1"
+            >
               Dirección
             </label>
             <input
@@ -1025,7 +1133,10 @@ export function VisaUsWizard() {
             />
           </div>
           <div>
-            <label htmlFor="colegioCiudad" className="block text-neutral-dark mb-1">
+            <label
+              htmlFor="colegioCiudad"
+              className="block text-neutral-dark mb-1"
+            >
               Ciudad
             </label>
             <input
@@ -1039,7 +1150,10 @@ export function VisaUsWizard() {
             />
           </div>
           <div>
-            <label htmlFor="colegioTelefono" className="block text-neutral-dark mb-1">
+            <label
+              htmlFor="colegioTelefono"
+              className="block text-neutral-dark mb-1"
+            >
               Teléfono
             </label>
             <input
@@ -1053,7 +1167,10 @@ export function VisaUsWizard() {
             />
           </div>
           <div>
-            <label htmlFor="colegioFechaInicio" className="block text-neutral-dark mb-1">
+            <label
+              htmlFor="colegioFechaInicio"
+              className="block text-neutral-dark mb-1"
+            >
               Fecha inicio
             </label>
             <input
@@ -1066,7 +1183,10 @@ export function VisaUsWizard() {
             />
           </div>
           <div>
-            <label htmlFor="colegioFechaFin" className="block text-neutral-dark mb-1">
+            <label
+              htmlFor="colegioFechaFin"
+              className="block text-neutral-dark mb-1"
+            >
               Fecha fin
             </label>
             <input
@@ -1083,10 +1203,15 @@ export function VisaUsWizard() {
 
       {/* Universidad */}
       <div className="space-y-4">
-        <h3 className="text-xl font-semibold text-neutral-dark mb-2">Universidad / Institución</h3>
+        <h3 className="text-xl font-semibold text-neutral-dark mb-2">
+          Universidad / Institución
+        </h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label htmlFor="universidadNombre" className="block text-neutral-dark mb-1">
+            <label
+              htmlFor="universidadNombre"
+              className="block text-neutral-dark mb-1"
+            >
               Nombre de la institución
             </label>
             <input
@@ -1100,7 +1225,10 @@ export function VisaUsWizard() {
             />
           </div>
           <div>
-            <label htmlFor="universidadPrograma" className="block text-neutral-dark mb-1">
+            <label
+              htmlFor="universidadPrograma"
+              className="block text-neutral-dark mb-1"
+            >
               Programa estudiado
             </label>
             <input
@@ -1114,7 +1242,10 @@ export function VisaUsWizard() {
             />
           </div>
           <div>
-            <label htmlFor="universidadDireccion" className="block text-neutral-dark mb-1">
+            <label
+              htmlFor="universidadDireccion"
+              className="block text-neutral-dark mb-1"
+            >
               Dirección
             </label>
             <input
@@ -1128,7 +1259,10 @@ export function VisaUsWizard() {
             />
           </div>
           <div>
-            <label htmlFor="universidadCiudad" className="block text-neutral-dark mb-1">
+            <label
+              htmlFor="universidadCiudad"
+              className="block text-neutral-dark mb-1"
+            >
               Ciudad
             </label>
             <input
@@ -1142,7 +1276,10 @@ export function VisaUsWizard() {
             />
           </div>
           <div>
-            <label htmlFor="universidadTelefono" className="block text-neutral-dark mb-1">
+            <label
+              htmlFor="universidadTelefono"
+              className="block text-neutral-dark mb-1"
+            >
               Teléfono
             </label>
             <input
@@ -1156,7 +1293,10 @@ export function VisaUsWizard() {
             />
           </div>
           <div>
-            <label htmlFor="universidadFechaInicio" className="block text-neutral-dark mb-1">
+            <label
+              htmlFor="universidadFechaInicio"
+              className="block text-neutral-dark mb-1"
+            >
               Fecha inicio
             </label>
             <input
@@ -1169,7 +1309,10 @@ export function VisaUsWizard() {
             />
           </div>
           <div>
-            <label htmlFor="universidadFechaFin" className="block text-neutral-dark mb-1">
+            <label
+              htmlFor="universidadFechaFin"
+              className="block text-neutral-dark mb-1"
+            >
               Fecha fin
             </label>
             <input
@@ -1186,10 +1329,15 @@ export function VisaUsWizard() {
 
       {/* Otros Estudios */}
       <div className="space-y-4">
-        <h3 className="text-xl font-semibold text-neutral-dark mb-2">Otros Estudios (si aplica)</h3>
+        <h3 className="text-xl font-semibold text-neutral-dark mb-2">
+          Otros Estudios (si aplica)
+        </h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label htmlFor="otrosEstudiosNombre" className="block text-neutral-dark mb-1">
+            <label
+              htmlFor="otrosEstudiosNombre"
+              className="block text-neutral-dark mb-1"
+            >
               Nombre de la institución
             </label>
             <input
@@ -1203,7 +1351,10 @@ export function VisaUsWizard() {
             />
           </div>
           <div>
-            <label htmlFor="otrosEstudiosDireccion" className="block text-neutral-dark mb-1">
+            <label
+              htmlFor="otrosEstudiosDireccion"
+              className="block text-neutral-dark mb-1"
+            >
               Dirección
             </label>
             <input
@@ -1217,7 +1368,10 @@ export function VisaUsWizard() {
             />
           </div>
           <div>
-            <label htmlFor="otrosEstudiosCiudad" className="block text-neutral-dark mb-1">
+            <label
+              htmlFor="otrosEstudiosCiudad"
+              className="block text-neutral-dark mb-1"
+            >
               Ciudad
             </label>
             <input
@@ -1231,7 +1385,10 @@ export function VisaUsWizard() {
             />
           </div>
           <div>
-            <label htmlFor="otrosEstudiosTelefono" className="block text-neutral-dark mb-1">
+            <label
+              htmlFor="otrosEstudiosTelefono"
+              className="block text-neutral-dark mb-1"
+            >
               Teléfono
             </label>
             <input
@@ -1245,7 +1402,10 @@ export function VisaUsWizard() {
             />
           </div>
           <div>
-            <label htmlFor="otrosEstudiosFechaInicio" className="block text-neutral-dark mb-1">
+            <label
+              htmlFor="otrosEstudiosFechaInicio"
+              className="block text-neutral-dark mb-1"
+            >
               Fecha inicio
             </label>
             <input
@@ -1258,7 +1418,10 @@ export function VisaUsWizard() {
             />
           </div>
           <div>
-            <label htmlFor="otrosEstudiosFechaFin" className="block text-neutral-dark mb-1">
+            <label
+              htmlFor="otrosEstudiosFechaFin"
+              className="block text-neutral-dark mb-1"
+            >
               Fecha fin
             </label>
             <input
@@ -1279,14 +1442,21 @@ export function VisaUsWizard() {
     <div className="space-y-6" key="paso6">
       <div className="flex items-center space-x-3 mb-4">
         <BriefcaseIcon className="h-8 w-8 text-accent-red" />
-        <h2 className="text-2xl font-semibold text-accent-red">Información Laboral</h2>
+        <h2 className="text-2xl font-semibold text-accent-red">
+          Información Laboral
+        </h2>
       </div>
 
       <div className="space-y-4">
-        <h3 className="text-xl font-semibold text-neutral-dark mb-2">Empleo Actual</h3>
+        <h3 className="text-xl font-semibold text-neutral-dark mb-2">
+          Empleo Actual
+        </h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label htmlFor="laboralEmpresaActual" className="block text-neutral-dark mb-1">
+            <label
+              htmlFor="laboralEmpresaActual"
+              className="block text-neutral-dark mb-1"
+            >
               Razón Social
             </label>
             <input
@@ -1300,7 +1470,10 @@ export function VisaUsWizard() {
             />
           </div>
           <div>
-            <label htmlFor="laboralCargoActual" className="block text-neutral-dark mb-1">
+            <label
+              htmlFor="laboralCargoActual"
+              className="block text-neutral-dark mb-1"
+            >
               Cargo
             </label>
             <input
@@ -1314,7 +1487,10 @@ export function VisaUsWizard() {
             />
           </div>
           <div>
-            <label htmlFor="laboralDireccionActual" className="block text-neutral-dark mb-1">
+            <label
+              htmlFor="laboralDireccionActual"
+              className="block text-neutral-dark mb-1"
+            >
               Dirección
             </label>
             <input
@@ -1328,7 +1504,10 @@ export function VisaUsWizard() {
             />
           </div>
           <div>
-            <label htmlFor="laboralCiudadActual" className="block text-neutral-dark mb-1">
+            <label
+              htmlFor="laboralCiudadActual"
+              className="block text-neutral-dark mb-1"
+            >
               Ciudad
             </label>
             <input
@@ -1342,7 +1521,10 @@ export function VisaUsWizard() {
             />
           </div>
           <div>
-            <label htmlFor="laboralTelefonoActual" className="block text-neutral-dark mb-1">
+            <label
+              htmlFor="laboralTelefonoActual"
+              className="block text-neutral-dark mb-1"
+            >
               Teléfono
             </label>
             <input
@@ -1356,7 +1538,10 @@ export function VisaUsWizard() {
             />
           </div>
           <div>
-            <label htmlFor="laboralIngresos" className="block text-neutral-dark mb-1">
+            <label
+              htmlFor="laboralIngresos"
+              className="block text-neutral-dark mb-1"
+            >
               Ingresos mensuales
             </label>
             <input
@@ -1370,7 +1555,10 @@ export function VisaUsWizard() {
             />
           </div>
           <div>
-            <label htmlFor="laboralSupervisor" className="block text-neutral-dark mb-1">
+            <label
+              htmlFor="laboralSupervisor"
+              className="block text-neutral-dark mb-1"
+            >
               Supervisor / Jefe inmediato
             </label>
             <input
@@ -1384,7 +1572,10 @@ export function VisaUsWizard() {
             />
           </div>
           <div>
-            <label htmlFor="laboralFechaInicio" className="block text-neutral-dark mb-1">
+            <label
+              htmlFor="laboralFechaInicio"
+              className="block text-neutral-dark mb-1"
+            >
               Fecha de inicio
             </label>
             <input
@@ -1397,7 +1588,10 @@ export function VisaUsWizard() {
             />
           </div>
           <div className="sm:col-span-2">
-            <label htmlFor="laboralFunciones" className="block text-neutral-dark mb-1">
+            <label
+              htmlFor="laboralFunciones"
+              className="block text-neutral-dark mb-1"
+            >
               Funciones actuales
             </label>
             <textarea
@@ -1415,10 +1609,15 @@ export function VisaUsWizard() {
 
       {/* Empleo Anterior (opcional) */}
       <div className="space-y-4">
-        <h3 className="text-xl font-semibold text-neutral-dark mb-2">Empleo Anterior (si aplica)</h3>
+        <h3 className="text-xl font-semibold text-neutral-dark mb-2">
+          Empleo Anterior (si aplica)
+        </h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label htmlFor="laboralAnteriorEmpresa" className="block text-neutral-dark mb-1">
+            <label
+              htmlFor="laboralAnteriorEmpresa"
+              className="block text-neutral-dark mb-1"
+            >
               Razón Social
             </label>
             <input
@@ -1432,7 +1631,10 @@ export function VisaUsWizard() {
             />
           </div>
           <div>
-            <label htmlFor="laboralAnteriorCargo" className="block text-neutral-dark mb-1">
+            <label
+              htmlFor="laboralAnteriorCargo"
+              className="block text-neutral-dark mb-1"
+            >
               Cargo
             </label>
             <input
@@ -1446,7 +1648,10 @@ export function VisaUsWizard() {
             />
           </div>
           <div>
-            <label htmlFor="laboralAnteriorDireccion" className="block text-neutral-dark mb-1">
+            <label
+              htmlFor="laboralAnteriorDireccion"
+              className="block text-neutral-dark mb-1"
+            >
               Dirección
             </label>
             <input
@@ -1460,7 +1665,10 @@ export function VisaUsWizard() {
             />
           </div>
           <div>
-            <label htmlFor="laboralAnteriorCiudad" className="block text-neutral-dark mb-1">
+            <label
+              htmlFor="laboralAnteriorCiudad"
+              className="block text-neutral-dark mb-1"
+            >
               Ciudad
             </label>
             <input
@@ -1474,7 +1682,10 @@ export function VisaUsWizard() {
             />
           </div>
           <div>
-            <label htmlFor="laboralAnteriorTelefono" className="block text-neutral-dark mb-1">
+            <label
+              htmlFor="laboralAnteriorTelefono"
+              className="block text-neutral-dark mb-1"
+            >
               Teléfono
             </label>
             <input
@@ -1488,7 +1699,10 @@ export function VisaUsWizard() {
             />
           </div>
           <div>
-            <label htmlFor="laboralAnteriorSupervisor" className="block text-neutral-dark mb-1">
+            <label
+              htmlFor="laboralAnteriorSupervisor"
+              className="block text-neutral-dark mb-1"
+            >
               Supervisor / Jefe inmediato
             </label>
             <input
@@ -1502,7 +1716,10 @@ export function VisaUsWizard() {
             />
           </div>
           <div>
-            <label htmlFor="laboralAnteriorFechaInicio" className="block text-neutral-dark mb-1">
+            <label
+              htmlFor="laboralAnteriorFechaInicio"
+              className="block text-neutral-dark mb-1"
+            >
               Fecha inicio
             </label>
             <input
@@ -1515,7 +1732,10 @@ export function VisaUsWizard() {
             />
           </div>
           <div>
-            <label htmlFor="laboralAnteriorFechaFin" className="block text-neutral-dark mb-1">
+            <label
+              htmlFor="laboralAnteriorFechaFin"
+              className="block text-neutral-dark mb-1"
+            >
               Fecha fin
             </label>
             <input
@@ -1555,7 +1775,10 @@ export function VisaUsWizard() {
             className="grid grid-cols-1 sm:grid-cols-3 gap-4 items-end"
           >
             <div className="sm:col-span-1">
-              <label htmlFor={`pais-${item.id}`} className="block text-neutral-dark mb-1">
+              <label
+                htmlFor={`pais-${item.id}`}
+                className="block text-neutral-dark mb-1"
+              >
                 País
               </label>
               <input
@@ -1568,7 +1791,10 @@ export function VisaUsWizard() {
               />
             </div>
             <div className="sm:col-span-1">
-              <label htmlFor={`fecha-${item.id}`} className="block text-neutral-dark mb-1">
+              <label
+                htmlFor={`fecha-${item.id}`}
+                className="block text-neutral-dark mb-1"
+              >
                 Fecha (MM/AAAA)
               </label>
               <input
@@ -1641,6 +1867,7 @@ export function VisaUsWizard() {
               <ArrowRightIcon className="h-4 w-4" />
             </button>
           ) : (
+            // SOLO en step === 6 aparece este botón de "Enviar"
             <button
               type="submit"
               className="inline-flex items-center px-6 py-3 bg-accent-red text-white rounded-full hover:bg-accent-coral transition shadow-lg"
@@ -1652,7 +1879,7 @@ export function VisaUsWizard() {
         </div>
       </div>
 
-      {/* Modal de éxito solo aparece después de enviar (paso 6) */}
+      {/* Modal de éxito SOLO tras enviar (step === 6 y submit) */}
       {showSuccessModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
           <div className="bg-white rounded-lg p-8 max-w-md mx-auto text-center space-y-4">
@@ -1661,13 +1888,13 @@ export function VisaUsWizard() {
               ¡Formulario enviado exitosamente!
             </h2>
             <p className="text-neutral-dark">
-              Gracias por completar tu solicitud. Nos pondremos en contacto pronto.
+              Gracias por completar tu solicitud. Nos pondremos en contacto
+              pronto.
             </p>
             <button
               onClick={() => {
                 setShowSuccessModal(false);
                 window.scrollTo({ top: 0, behavior: "smooth" });
-                // Opcional: resetear formData o redirigir
                 setStep(1);
               }}
               className="mt-4 inline-flex items-center bg-accent-red text-white px-6 py-2 rounded-md hover:bg-accent-coral transition"
