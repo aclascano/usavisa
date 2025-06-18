@@ -8,7 +8,7 @@ import { Footer } from "../../components/organisms/Footer";
 export default function SolicitarPage() {
   return (
     <>
-
+      <Navbar />
       <main className="pt-16">
         {/* Sección de inicio de “Solicitar Ahora” (círculos + mensaje) */}
         <SolicitarNowSection />
