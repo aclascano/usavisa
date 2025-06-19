@@ -1,0 +1,60 @@
+[
+  {
+    "id": "usa-tourist",
+    "title": "Visa de Turismo USA",
+    "country": "usa",
+    "image": "/catalog/visa-turismo-usa.jpg",
+    "tags": [
+      "turismo",
+      "vacaciones",
+      "usa",
+      "b1",
+      "b2"
+    ],
+    "description": "Visa para visitar Estados Unidos por turismo o vacaciones.",
+    "details": "Permite visitar EE. UU. por motivos recreativos. Ideal para quienes quieren conocer el país por un tiempo determinado sin fines laborales ni académicos. Se necesita pasaporte vigente y demostrar la intención de regresar a tu país."
+  },
+  {
+    "id": "usa-negocios",
+    "title": "Visa de Negocios USA",
+    "country": "usa",
+    "image": "/catalog/visa-negocios-usa.jpg",
+    "tags": [
+      "negocios",
+      "reuniones",
+      "b1",
+      "usa"
+    ],
+    "description": "Visa B1 para ingresar a EE. UU. por reuniones, ferias o negocios.",
+    "details": "Esta visa es adecuada para personas que necesitan asistir a conferencias, firmar contratos o tener reuniones profesionales. No permite empleo remunerado en EE. UU."
+  },
+  {
+    "id": "ca-estudiante",
+    "title": "Visa de Estudiante Canadá",
+    "country": "canada",
+    "image": "/catalog/visa-estudios-canada.jpg",
+    "tags": [
+      "canadá",
+      "estudios",
+      "universidad",
+      "college",
+      "visa estudio"
+    ],
+    "description": "Permiso de estudios para cursar programas en instituciones canadienses.",
+    "details": "Otorga la posibilidad de vivir en Canadá mientras cursas estudios en una universidad, college o centro educativo autorizado. Puedes incluir extensiones para trabajo durante el estudio o post-graduación."
+  },
+  {
+    "id": "ca-trabajo",
+    "title": "Permiso de Trabajo Canadá",
+    "country": "canada",
+    "image": "/catalog/visa-trabajo-canada.jpg",
+    "tags": [
+      "trabajo",
+      "laboral",
+      "canada",
+      "permiso"
+    ],
+    "description": "Permiso laboral para ejercer legalmente actividades en Canadá.",
+    "details": "Para personas que tienen una oferta de trabajo o que participan en programas migratorios. Requiere documentación del empleador canadiense o elegibilidad en programas específicos."
+  }
+]

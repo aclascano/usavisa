@@ -6,7 +6,6 @@ import { AboutUsSection } from "../components/templates/AboutUsSection";
 import { VisasTabsSection } from "../components/templates/VisasTabsSection";
 import { CompanyRegistrationSection } from "../components/templates/CompanyRegistrationSection";
 import { MidCTASection } from "../components/templates/MidCTASection";
-import { TestimonialsCarousel } from "../components/templates/TestimonialsCarousel";
 import { WhyChooseUsSection } from "../components/templates/WhyChooseUsSection";
 import { ContactFormSection } from "../components/templates/ContactFormSection";
 
@@ -32,10 +31,6 @@ export default function HomePage() {
 
       <section id="empresa">
         <CompanyRegistrationSection />
-      </section>
-
-      <section id="testimonios">
-        <TestimonialsCarousel />
       </section>
 
       <section id="why">
