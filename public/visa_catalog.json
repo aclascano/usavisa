@@ -1,60 +1,392 @@
 [
+  
   {
-    "id": "usa-tourist",
-    "title": "Visa de Turismo USA",
+    "id": "visa-o",
+    "title": "Visa O (Personas con habilidades extraordinarias)",
     "country": "usa",
-    "image": "/catalog/visa-turismo-usa.jpg",
+    "image": "/images/visas/visa-o.jpg",
     "tags": [
-      "turismo",
-      "vacaciones",
-      "usa",
-      "b1",
-      "b2"
+      "Talento",
+      "Extraordinario",
+      "Ciencia",
+      "Arte"
     ],
-    "description": "Visa para visitar Estados Unidos por turismo o vacaciones.",
-    "details": "Permite visitar EE. UU. por motivos recreativos. Ideal para quienes quieren conocer el país por un tiempo determinado sin fines laborales ni académicos. Se necesita pasaporte vigente y demostrar la intención de regresar a tu país."
+    "description": "Visa para personas con habilidades extraordinarias en ciencias, artes, educación, negocios o deportes.",
+    "details": "La categoría O-1 es para individuos con logros reconocidos a nivel nacional o internacional. También incluye a los asistentes (O-2) y familiares (O-3). Requiere evidencia sólida de logros y patrocinio de una organización estadounidense."
+  },
+  
+  {
+    "id": "visa-q",
+    "title": "Visa Q (Intercambio cultural internacional)",
+    "country": "usa",
+    "image": "/images/visas/visa-q.jpg",
+    "tags": [
+      "Cultura",
+      "Intercambio",
+      "Entrenamiento"
+    ],
+    "description": "La visa Q permite participar en programas de intercambio cultural con actividades de capacitación o empleo temporal.",
+    "details": "Diseñada para facilitar el intercambio de cultura, historia y tradiciones. Se requiere patrocinio de una organización con un programa de intercambio reconocido por el gobierno de EE. UU."
   },
   {
-    "id": "usa-negocios",
-    "title": "Visa de Negocios USA",
+    "id": "visa-l",
+    "title": "Visa L (Transferencia dentro de la misma empresa)",
     "country": "usa",
-    "image": "/catalog/visa-negocios-usa.jpg",
+    "image": "/images/visas/visa-l.jpg",
     "tags": [
-      "negocios",
-      "reuniones",
-      "b1",
-      "usa"
+      "Corporativo",
+      "Ejecutivos",
+      "Transferencia"
     ],
-    "description": "Visa B1 para ingresar a EE. UU. por reuniones, ferias o negocios.",
-    "details": "Esta visa es adecuada para personas que necesitan asistir a conferencias, firmar contratos o tener reuniones profesionales. No permite empleo remunerado en EE. UU."
+    "description": "La visa L permite a empleados de empresas multinacionales trasladarse a la oficina estadounidense.",
+    "details": "Para ejecutivos, gerentes o trabajadores con conocimiento especializado que han trabajado para la empresa en el extranjero al menos un año en los últimos tres años. Aplica tanto a empresas grandes como a startups con filial en EE. UU."
+  },
+  
+  {
+    "id": "visa-i",
+    "title": "Visa I (Representantes de Medios de Comunicación)",
+    "country": "usa",
+    "image": "/images/visas/visa-i.jpg",
+    "tags": [
+      "Periodismo",
+      "Medios",
+      "Comunicación"
+    ],
+    "description": "La visa I permite que representantes de medios extranjeros trabajen temporalmente en EE. UU.",
+    "details": "Se otorga a periodistas, camarógrafos, editores y otros profesionales de medios acreditados. Deben estar empleados por una organización de prensa extranjera reconocida y venir a cubrir eventos en EE. UU."
+  },
+  {
+    "id": "visa-p",
+    "title": "Visa P (Artistas, Animadores y Atletas Reconocidos)",
+    "country": "usa",
+    "image": "/images/visas/visa-p.jpg",
+    "tags": [
+      "Artistas",
+      "Deportistas",
+      "Animadores"
+    ],
+    "description": "La visa P permite que artistas, atletas y grupos de entretenimiento reconocidos ingresen a EE. UU. para actuar o competir.",
+    "details": "Incluye categorías P-1 para atletas reconocidos o miembros de un grupo de entretenimiento, P-2 para artistas que participan en intercambios recíprocos, y P-3 para artistas que enseñan, interpretan o entrenan en un programa culturalmente único. Se requiere evidencia de reconocimiento internacional."
+  },
+  {
+    "id": "h1b",
+    "title": "Visa H-1B – Trabajador Profesional Especializado",
+    "country": "usa",
+    "image": "/images/visas/h1b.jpg",
+    "tags": [
+      "trabajo",
+      "especialización",
+      "temporal"
+    ],
+    "description": "Para profesionales en ocupaciones especializadas como tecnología, ingeniería o medicina. Se requiere oferta laboral de un empleador estadounidense.",
+    "requirements": [
+      "Formulario DS-160 completado.",
+      "Pasaporte vigente.",
+      "Oferta laboral de un empleador estadounidense.",
+      "Título universitario o equivalente en el campo de especialización.",
+      "Formulario I-129 aprobado por el USCIS.",
+      "Recibo de pago de tasa de visa.",
+      "Recibo de cita del CAS y confirmación del DS-160.",
+      "Fotografía tamaño pasaporte (5x5)."
+    ],
+    "details": "Tiene una duración inicial de 3 años, prorrogable hasta 6 años. Sujeta a cupos anuales. Puede incluir dependientes bajo las visas H-4."
+  },
+  {
+    "id": "f1",
+    "title": "Visa F-1 – Visa de Estudiante",
+    "country": "usa",
+    "image": "/images/visas/f1.jpg",
+    "tags": [
+      "estudios",
+      "educación",
+      "universidad"
+    ],
+    "description": "Para estudiantes extranjeros que deseen realizar estudios académicos en universidades, colegios u otras instituciones educativas en usa",
+    "requirements": [
+      "Formulario DS-160 completado.",
+      "Pasaporte vigente.",
+      "Formulario I-20 emitido por la institución educativa.",
+      "Pago de tasa SEVIS.",
+      "Recibo de pago de tasa de visa.",
+      "Pruebas de solvencia económica.",
+      "Pruebas de lazos con el país de origen.",
+      "Confirmación de entrevista (si aplica)."
+    ],
+    "details": "Permite trabajar en el campus hasta 20 horas semanales. Puede solicitar permiso OPT/CPT después del primer año para trabajar en el área de estudios."
+  },
+  {
+    "id": "h2a",
+    "title": "Visa H-2A – Trabajador Agrícola Temporal",
+    "country": "usa",
+    "image": "/images/visas/h2a.jpg",
+    "tags": [
+      "trabajo",
+      "temporal",
+      "agrícola"
+    ],
+    "description": "Para trabajadores extranjeros que deseen realizar labores agrícolas temporales o estacionales en usa",
+    "requirements": [
+      "Formulario DS-160.",
+      "Pasaporte vigente.",
+      "Petición I-129 aprobada por el empleador.",
+      "Contrato de trabajo o carta oferta.",
+      "Prueba de arraigo en el país de origen.",
+      "Recibo de pago de tasa de visa.",
+      "Confirmación de entrevista consular."
+    ],
+    "details": "Válida por el tiempo autorizado en la petición (máximo 1 año). Puede ser renovada. El empleador debe cubrir ciertos gastos de transporte y vivienda."
+  },
+  {
+    "id": "visa-m",
+    "title": "Visa M (Estudios vocacionales y técnicos)",
+    "country": "usa",
+    "image": "/images/visas/visa-m.jpg",
+    "tags": [
+      "Estudios",
+      "Técnico",
+      "Vocacional"
+    ],
+    "description": "Permite a estudiantes extranjeros asistir a programas no académicos o vocacionales en EE. UU.",
+    "requirements": [
+      "Aceptación en institución educativa acreditada.",
+      "Formulario I-20 emitido por la institución.",
+      "Demostración de fondos suficientes.",
+      "Evidencia de intención de regresar al país de origen.",
+      "Formulario DS-160.",
+      "Pasaporte válido.",
+      "Fotografía tipo visa.",
+      "Entrevista consular."
+    ],
+    "details": "La visa M se otorga por la duración del programa y permite formación técnica. No permite trabajar en EE. UU. El tiempo de tramitación promedio es de 2 a 4 semanas."
+  },
+  {
+    "id": "visa-c",
+    "title": "Visa C (Tránsito por Estados Unidos)",
+    "country": "usa",
+    "image": "/images/visas/visa-c.jpg",
+    "tags": [
+      "Tránsito",
+      "Conexión",
+      "Viaje"
+    ],
+    "description": "Permite transitar por EE. UU. de camino a otro país.",
+    "requirements": [
+      "Formulario DS-160.",
+      "Pasaporte válido.",
+      "Boleto hacia país de destino.",
+      "Prueba de intención de salida de EE. UU.",
+      "Entrevista consular."
+    ],
+    "details": "No permite cambio de estatus ni trabajo. Máximo 29 días de estadía. Solo para tránsito internacional."
+  },
+  {
+    "id": "visa-k1",
+    "title": "Visa K-1 (Visa de prometido/a)",
+    "country": "usa",
+    "image": "/images/visas/visa-k1.jpg",
+    "tags": [
+      "Matrimonio",
+      "Prometido",
+      "Residencia"
+    ],
+    "description": "Permite a un ciudadano estadounidense traer a su prometido(a) para casarse en EE. UU.",
+    "requirements": [
+      "Formulario I-129F aprobado.",
+      "Evidencia de relación genuina.",
+      "Documentos de identidad y estado civil.",
+      "Formulario DS-160.",
+      "Entrevista consular."
+    ],
+    "details": "Permite casarse dentro de los 90 días posteriores a la llegada. Luego se puede ajustar estatus a residente permanente."
+  },
+  {
+    "id": "visa-k2",
+    "title": "Visa K-2 (Hijos del prometido/a con visa K-1)",
+    "country": "usa",
+    "image": "/images/visas/visa-k2.jpg",
+    "tags": [
+      "Familia",
+      "Prometido",
+      "Residencia"
+    ],
+    "description": "Permite a hijos solteros menores de 21 años del titular de una visa K-1 acompañar a su padre o madre a EE. UU.",
+    "requirements": [
+      "Formulario I-129F con inclusión del menor.",
+      "Certificados de nacimiento.",
+      "Pasaporte válido.",
+      "Formulario DS-160.",
+      "Entrevista consular."
+    ],
+    "details": "Permite entrar por 90 días junto con el padre/madre. Puede ajustarse el estatus tras el matrimonio del progenitor."
+  },
+  {
+    "id": "visa-k3",
+    "title": "Visa K-3 (Cónjuges de ciudadanos estadounidenses)",
+    "country": "usa",
+    "image": "/images/visas/visa-k3.jpg",
+    "tags": [
+      "Cónyuge",
+      "Reunificación",
+      "Familia"
+    ],
+    "description": "Permite a cónyuges de ciudadanos estadounidenses ingresar mientras se tramita la residencia permanente.",
+    "requirements": [
+      "Formulario I-130 e I-129F aprobados.",
+      "Certificado de matrimonio.",
+      "Pruebas de relación.",
+      "Documentos de identidad.",
+      "Entrevista consular."
+    ],
+    "details": "Visa válida por 2 años con posibilidad de extensión. Permite vivir en EE. UU. mientras se tramita la green card."
+  },{
+    "id": "visa-ir",
+    "title": "Visa de Petición Familiar (IR - Inmigrante Relativo Inmediato)",
+    "country": "usa",
+    "image": "/images/visas/visa-ir.jpg",
+    "tags": [
+      "Familia",
+      "Residencia",
+      "IR-1",
+      "IR-2",
+      "IR-5"
+    ],
+    "description": "Visas para cónyuges, hijos menores y padres de ciudadanos estadounidenses, sin límite de emisión anual.",
+    "requirements": [
+      "Documentos que demuestren la relación familiar (certificados de nacimiento y matrimonio).",
+      "Pruebas de ciudadanía o estatus del peticionario.",
+      "Entrevista consular en el país de origen.",
+      "Formulario I-130 y documentación de respaldo."
+    ],
+    "details": "Incluye IR-1 (cónyuge), IR-2 (hijo menor), IR-3/IR-4 (adopciones) e IR-5 (padre). El beneficiario recibe la residencia permanente al ingresar a EE. UU."
+  },
+  {
+    "id": "asilo",
+    "title": "Asilo Político en usa",
+    "country": "usa",
+    "image": "/images/visas/asilo.jpg",
+    "tags": [
+      "Protección",
+      "Refugio",
+      "Derechos Humanos"
+    ],
+    "description": "Estatus legal otorgado a personas que han sufrido o temen persecución por raza, religión, nacionalidad, grupo social u opiniones políticas.",
+    "requirements": [
+      "Formulario I-589 completado dentro del primer año de ingreso a usa",
+      "Pruebas de persecución o temor fundado.",
+      "Entrevista con oficial de asilo.",
+      "Inclusión del cónyuge si aplica."
+    ],
+    "details": "Permite vivir y trabajar en EE. UU. y solicitar residencia permanente tras un año. Aplica tanto para solicitantes principales como sus cónyuges. Existen modalidades afirmativas y defensivas del proceso de asilo."
+  },
+  {
+    "id": "waiver",
+    "title": "Perdón Migratorio (Waiver)",
+    "country": "usa",
+    "image": "/images/visas/waiver.jpg",
+    "tags": [
+      "Exención",
+      "Inmigración",
+      "Legal"
+    ],
+    "description": "Permite a personas inadmisibles solicitar una exención para obtener visa o ajustar estatus legal en usa",
+    "requirements": [
+      "Formulario I-601 o I-601A.",
+      "Pruebas de dificultades extremas a familiares ciudadanos o residentes.",
+      "Documentación de inadmisibilidad.",
+      "Evidencia de vínculo familiar."
+    ],
+    "details": "Existen diferentes tipos como I-601 (inadmisibilidad) e I-601A (perdón provisional). Requiere preparación cuidadosa y puede demorar varios meses. A menudo se recomienda asesoría legal."
+  },
+  {
+    "id": "visa-e",
+    "title": "Visa E (Inversionista)",
+    "country": "usa",
+    "image": "/images/visas/visa-e.jpg",
+    "tags": [
+      "Negocios",
+      "Inversión",
+      "Residencia"
+    ],
+    "description": "Visas para ciudadanos de países con tratados comerciales que invierten en usa o que buscan residencia por inversión significativa.",
+    "requirements": [
+      "Ser ciudadano de un país con tratado comercial (para E-2).",
+      "Invertir en un negocio activo (E-2) o crear empleos (EB-5).",
+      "Demostrar fondos legítimos.",
+      "Formulario DS-160, pruebas de inversión y evidencia financiera."
+    ],
+    "details": "E-2: permite operar negocios con visa renovable. EB-5: otorga residencia condicional por inversión de $900,000 o más y creación de empleo."
+  },
+  {
+    "id": "visa-b1-deportistas",
+    "title": "Visa B-1 (Deportistas)",
+    "country": "usa",
+    "image": "/images/visas/visa-b1-sports.jpg",
+    "tags": [
+      "Deporte",
+      "Eventos",
+      "Competencia"
+    ],
+    "description": "Visa temporal para deportistas que participan en eventos o actividades sin recibir salario en usa",
+    "requirements": [
+      "Formulario DS-160.",
+      "Documentos que prueben participación en eventos deportivos.",
+      "Pruebas de solvencia económica.",
+      "Entrevista consular y pruebas de intención de regresar."
+    ],
+    "details": "No permite empleo formal, pero sí recibir premios. Vigente hasta 6 meses."
+  },
+  {
+    "id": "ca-turismo",
+    "title": "Visa de Turismo",
+    "country": "canada",
+    "image": "/images/visas/ca-turismo.jpg",
+    "tags": ["turismo", "viaje", "vacaciones", "visita"],
+    "description": "Descubre las maravillas naturales y culturales de Canadá.",
+    "details": "Esta visa te permite visitar Canadá por un período determinado con fines turísticos. Es ideal para explorar paisajes, ciudades y cultura canadiense."
   },
   {
     "id": "ca-estudiante",
-    "title": "Visa de Estudiante Canadá",
+    "title": "Visa de Estudiante",
     "country": "canada",
-    "image": "/catalog/visa-estudios-canada.jpg",
-    "tags": [
-      "canadá",
-      "estudios",
-      "universidad",
-      "college",
-      "visa estudio"
-    ],
-    "description": "Permiso de estudios para cursar programas en instituciones canadienses.",
-    "details": "Otorga la posibilidad de vivir en Canadá mientras cursas estudios en una universidad, college o centro educativo autorizado. Puedes incluir extensiones para trabajo durante el estudio o post-graduación."
+    "image": "/images/visas/ca-estudiante.jpg",
+    "tags": ["estudios", "universidad", "educación", "canadá"],
+    "description": "Persigue tus estudios en instituciones educativas canadienses de renombre.",
+    "details": "La visa de estudiante permite cursar programas académicos en Canadá, con posibilidad de trabajo de medio tiempo durante los estudios y tiempo completo en vacaciones."
   },
   {
     "id": "ca-trabajo",
-    "title": "Permiso de Trabajo Canadá",
+    "title": "Visa de Trabajo",
     "country": "canada",
-    "image": "/catalog/visa-trabajo-canada.jpg",
-    "tags": [
-      "trabajo",
-      "laboral",
-      "canada",
-      "permiso"
-    ],
-    "description": "Permiso laboral para ejercer legalmente actividades en Canadá.",
-    "details": "Para personas que tienen una oferta de trabajo o que participan en programas migratorios. Requiere documentación del empleador canadiense o elegibilidad en programas específicos."
+    "image": "/images/visas/ca-trabajo.jpg",
+    "tags": ["trabajo", "empleo", "canadá", "laboral"],
+    "description": "Busca oportunidades laborales en Canadá.",
+    "details": "Esta visa permite trabajar temporalmente en Canadá. Requiere oferta laboral previa o programas de trabajo específicos aprobados por el gobierno canadiense."
+  },
+  {
+    "id": "ca-residencia",
+    "title": "Visa de Residencia Permanente",
+    "country": "canada",
+    "image": "/images/visas/ca-residencia.jpg",
+    "tags": ["residencia", "permanente", "emigrar", "canadá"],
+    "description": "Oportunidad para establecerse en Canadá de forma permanente.",
+    "details": "Otorga el estatus de residente permanente. Aplica para trabajadores calificados, inversionistas, familiares patrocinados, entre otros programas de inmigración."
+  },
+  {
+    "id": "ca-familiar",
+    "title": "Visa de Reunificación Familiar",
+    "country": "canada",
+    "image": "/images/visas/ca-familiar.jpg",
+    "tags": ["familia", "reunión", "patrocinio", "canadá"],
+    "description": "Reúnete con tus seres queridos que ya están en Canadá.",
+    "details": "Permite a ciudadanos o residentes permanentes patrocinar a familiares cercanos como cónyuges, padres o hijos dependientes para que vivan en Canadá."
+  },
+  {
+    "id": "ca-inversionista",
+    "title": "Visa Empresario / Inversionista",
+    "country": "canada",
+    "image": "/images/visas/ca-inversionista.jpg",
+    "tags": ["negocios", "inversión", "empresa", "canadá"],
+    "description": "Abre las puertas para el éxito empresarial en Canadá.",
+    "details": "Diseñada para personas que desean iniciar un negocio o invertir en Canadá. Requiere un plan de negocio viable y fondos comprobables."
   }
 ]

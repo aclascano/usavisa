@@ -19,8 +19,7 @@ import {
 const visasUS = [
   {
     title: "Visa inversión (EB-5)",
-    desc:
-      "Para inversores que quieran crear empleos en EE UU. Inversión mínima: $500,000 a $1,000,000 USD.",
+    desc: "Para inversores que quieran crear empleos en EE UU. Inversión mínima: $500,000 a $1,000,000 USD.",
     Icon: CurrencyDollarIcon,
   },
   {
@@ -30,8 +29,7 @@ const visasUS = [
   },
   {
     title: "Visa reunificación familiar (IR)",
-    desc:
-      "Para familiares inmediatos de ciudadanos estadounidenses o residentes permanentes legales.",
+    desc: "Para familiares inmediatos de ciudadanos estadounidenses o residentes permanentes legales.",
     Icon: UserGroupIcon,
   },
   {
@@ -46,14 +44,12 @@ const visasUS = [
   },
   {
     title: "Visa intercambio (J-1)",
-    desc:
-      "Para participar en programas de intercambio cultural, educativo o profesional.",
+    desc: "Para participar en programas de intercambio cultural, educativo o profesional.",
     Icon: LightBulbIcon,
   },
   {
     title: "Visa trabajo temporal (H-1B)",
-    desc:
-      "Para profesionales especializados (TI, ingeniería, ciencias) con oferta laboral en EE UU.",
+    desc: "Para profesionales especializados (TI, ingeniería, ciencias) con oferta laboral en EE UU.",
     Icon: IdentificationIcon,
   },
   {
@@ -73,26 +69,22 @@ const visasUS = [
   },
   {
     title: "Visa artista/deportista (O)",
-    desc:
-      "Para artistas y deportistas de alto nivel que van a competir o presentarse en EE UU.",
+    desc: "Para artistas y deportistas de alto nivel que van a competir o presentarse en EE UU.",
     Icon: GlobeAmericasIcon,
   },
   {
     title: "Visa basada en oferta laboral (EB-1, EB-2, EB-3)",
-    desc:
-      "EB-1: habilidades extraordinarias. EB-2: profesionales con títulos avanzados. EB-3: trabajadores calificados y técnicos.",
+    desc: "EB-1: habilidades extraordinarias. EB-2: profesionales con títulos avanzados. EB-3: trabajadores calificados y técnicos.",
     Icon: BriefcaseIcon,
   },
   {
     title: "Visa diversidad (DV)",
-    desc:
-      "Para personas de países con bajas tasas de inmigración a EE UU, seleccionadas por sorteo anual.",
+    desc: "Para personas de países con bajas tasas de inmigración a EE UU, seleccionadas por sorteo anual.",
     Icon: BuildingLibraryIcon,
   },
   {
     title: "Visa de prometido/a (K-1)",
-    desc:
-      "Permite viajar a EE UU para casarse con tu prometido/a ciudadano/a estadounidense dentro de 90 días.",
+    desc: "Permite viajar a EE UU para casarse con tu prometido/a ciudadano/a estadounidense dentro de 90 días.",
     Icon: IdentificationIcon,
   },
 ];
@@ -135,7 +127,10 @@ export function VisasTabsSection() {
   const items = activeTab === "US" ? visasUS : visasCA;
 
   return (
-    <section id="visas" className="relative py-24 bg-gradient-to-b from-neutral-light to-white overflow-hidden">
+    <section
+      id="visas"
+      className="relative py-24 bg-gradient-to-b from-neutral-light to-white overflow-hidden"
+    >
       {/* Fondos decorativos tenues */}
       <div className="absolute -top-20 -left-20 w-[400px] h-[400px] bg-accent-gold/10 rounded-full filter blur-3xl animate-pulse"></div>
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full filter blur-3xl"></div>

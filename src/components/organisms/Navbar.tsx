@@ -11,9 +11,8 @@ const navItems = [
   { label: "Inicio", href: "/" },
   { label: "Servicios", href: "/#servicios" },
   { label: "Acerca de", href: "/#acerca" },
-  { label: "Visas", href: "/#visas" },
-  { label: "Catálogo", href: "/catalogo" },
   { label: "Crear Empresa", href: "/#empresa" },
+  { label: "Visas", href: "/catalogo" },
   { label: "Contacto", href: "/#contacto" },
 ];
 

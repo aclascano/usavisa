@@ -155,7 +155,10 @@ export function ContactFormSection() {
           </div>
 
           <div>
-            <label htmlFor="comoEnteraste" className="block text-neutralDark mb-1">
+            <label
+              htmlFor="comoEnteraste"
+              className="block text-neutralDark mb-1"
+            >
               ¿Cómo te enteraste de nosotros?
             </label>
             <input
@@ -182,22 +185,6 @@ export function ContactFormSection() {
               className="w-full border border-neutralLight rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-accent2 transition"
               placeholder="Cuéntanos tu situación..."
             ></textarea>
-          </div>
-
-          <div>
-            <label htmlFor="captcha" className="block text-neutralDark mb-1">
-              3 + 6 = ?  {/* Validación matemática básica */}
-            </label>
-            <input
-              type="text"
-              id="captcha"
-              name="captcha"
-              value={formData.captcha}
-              onChange={handleChange}
-              className="w-1/3 border border-neutralLight rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-accent2 transition"
-              placeholder="Escribe 9"
-              required
-            />
           </div>
 
           <div className="text-center">

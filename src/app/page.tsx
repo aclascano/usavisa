@@ -25,10 +25,6 @@ export default function HomePage() {
         <AboutUsSection />
       </section>
 
-      <section id="visas">
-        <VisasTabsSection />
-      </section>
-
       <section id="empresa">
         <CompanyRegistrationSection />
       </section>

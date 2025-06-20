@@ -3,7 +3,7 @@ import { VisaCatalogSection } from "@/components/templates/VisaCatalogSection";
 
 export default function CatalogPage() {
   return (
-    <main className="pt-20">
+    <main className="pt-0">
       <VisaCatalogSection />
     </main>
   );

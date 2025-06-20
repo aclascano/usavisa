@@ -9,7 +9,7 @@ export default function SolicitarPage() {
   return (
     <>
       <Navbar />
-      <main className="pt-16">
+      <main className="pt-0">
         {/* Sección de inicio de “Solicitar Ahora” (círculos + mensaje) */}
         <SolicitarNowSection />
       </main>

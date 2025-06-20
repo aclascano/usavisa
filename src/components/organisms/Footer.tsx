@@ -1,7 +1,7 @@
-// src/components/organisms/Footer.tsx
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import Link from "next/link";
 import {
   PhoneIcon,
@@ -12,134 +12,114 @@ import {
 
 export function Footer() {
   return (
-    <footer className="bg-[#041E42] text-white">
-      {/* Contenedor principal: 4 columnas con mayor separación horizontal */}
-      <div className="max-w-5xl mx-auto px-4 py-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-y-8 gap-x-12">
-        {/* Columna 1: Sobre Nosotros */}
-        <div className="space-y-2">
-          <h3 className="text-lg font-semibold">US Immigration Services</h3>
-          <p className="text-sm leading-snug text-gray-200">
-            En{" "}
-            <span className="font-semibold text-white">
-              US Immigration Services
-            </span>{" "}
-            te acompañamos en cada paso de tu trámite de visa. Confianza,
-            seguridad y rapidez son nuestro compromiso.
+    <footer className="bg-white border-t border-gray-200 text-gray-700 text-xs">
+      <div
+        className="
+          max-w-6xl mx-auto py-6
+          grid grid-cols-1 md:grid-cols-3 gap-y-6 md:gap-y-0 md:gap-x-64 px-4 md:px-12
+        "
+      >
+        {/* 1. Logo + frase + redes */}
+        <div className="justify-self-end flex flex-col items-start space-y-1 ">
+          <Image
+            src="/LogoFooter.png"
+            alt="Logo Footer"
+            width={120}
+            height={30}
+            className="object-contain"
+          />
+          <p className="text-[#E31B23] font-semibold">
+            Tu tranquilidad es nuestra prioridad
           </p>
-        </div>
-
-        {/* Columna 2: Contacto Telefónico y Correo */}
-        <div className="space-y-2">
-          <h3 className="text-lg font-semibold">Contáctanos</h3>
-          <ul className="space-y-2 text-sm text-gray-200">
-            <li className="flex items-center space-x-2">
-              <PhoneIcon className="h-5 w-5 text-[#E31B23]" />
-              <span>
-                Fijo:{" "}
-                <a href="tel:5107497" className="hover:text-[#FFAB91]">
-                  5107497
-                </a>
-              </span>
-            </li>
-            <li className="flex items-center space-x-2">
-              <DevicePhoneMobileIcon className="h-5 w-5 text-[#E31B23]" />
-              <span>
-                Celular:{" "}
-                <a href="tel:0990764732" className="hover:text-[#FFAB91]">
-                  0990764732
-                </a>
-              </span>
-            </li>
-            <li className="flex items-center space-x-2">
-              <EnvelopeIcon className="h-5 w-5 text-[#E31B23]" />
-              <span>
-                Correo:{" "}
-                <a
-                  href="mailto:contacto@usavisaecuador.com"
-                  className="hover:text-[#FFAB91]"
-                >
-                  contacto@usavisaecuador.com
-                </a>
-              </span>
-            </li>
-          </ul>
-        </div>
-
-        {/* Columna 3: Ubicaciones */}
-        <div className="space-y-2">
-          <h3 className="text-lg font-semibold">Ubicaciones</h3>
-          <ul className="space-y-2 text-sm text-gray-200">
-            <li className="flex items-center space-x-2">
-              <MapPinIcon className="h-5 w-5 text-[#0074D9]" />
-              <span>Miami, EE UU</span>
-            </li>
-            <li className="flex items-center space-x-2">
-              <MapPinIcon className="h-5 w-5 text-[#0074D9]" />
-              <span>Quito, Ecuador</span>
-            </li>
-            <li className="flex items-center space-x-2">
-              <MapPinIcon className="h-5 w-5 text-[#0074D9]" />
-              <span>Bogotá, Colombia</span>
-            </li>
-          </ul>
-        </div>
-
-        {/* Columna 4: Redes Sociales */}
-        <div className="space-y-2">
-          <h3 className="text-lg font-semibold">Síguenos</h3>
-          <div className="flex items-center space-x-6">
-            {/* TikTok */}
+          <div className="flex space-x-3">
             <Link
-              href="https://www.tiktok.com/@usa_immigration_services?is_from_webapp=1&sender_device=pc"
+              href="https://www.tiktok.com/@usa_immigration_services"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener"
             >
-              <div className="p-1 hover:scale-110 transition">
-                <img
-                  src="https://cdn-icons-png.flaticon.com/512/3046/3046123.png"
-                  alt="TikTok"
-                  className="h-6 w-6 filter brightness-0 invert"
-                />
-              </div>
+              <img src="/tiktok.png" alt="TikTok" className="h-5 w-5" />
             </Link>
-            {/* Instagram */}
             <Link
               href="https://www.instagram.com/usa_immigration_servicess/"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener"
             >
-              <div className="p-1 hover:scale-110 transition">
-                <img
-                  src="https://cdn-icons-png.flaticon.com/512/174/174855.png"
-                  alt="Instagram"
-                  className="h-6 w-6 filter brightness-0 invert"
-                />
-              </div>
+              <img src="/instagram.png" alt="Instagram" className="h-5 w-5" />
             </Link>
-            {/* Facebook */}
             <Link
               href="https://www.facebook.com/share/1CbvonaJYq/"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener"
             >
-              <div className="p-1 hover:scale-110 transition">
-                <img
-                  src="https://cdn-icons-png.flaticon.com/512/733/733547.png"
-                  alt="Facebook"
-                  className="h-6 w-6 filter brightness-0 invert"
-                />
-              </div>
+              <img src="/facebook.png" alt="Facebook" className="h-5 w-5" />
             </Link>
+          </div>
+        </div>
+
+        {/* 2. About Us */}
+        <div className="justify-self-center flex flex-col items-center justify-end">
+          <h4 className="font-semibold uppercase mb-1">About Us</h4>
+          <p className="text-center text-gray-600">
+            Asesoría profesional en trámites migratorios para EE.UU. y Canadá.
+          </p>
+        </div>
+
+        {/* 3. Contacto + Ubicaciones */}
+        <div className="flex flex-col md:flex-col items-start md:justify-between w-full space-y-4 md:space-y-0">
+          {/* Contacto */}
+          <div>
+            <h4 className="font-semibold uppercase mb-1">Contáctanos</h4>
+            <ul className="space-y-1">
+              <li className="flex items-center space-x-2">
+                <PhoneIcon className="h-4 w-4 text-[#E31B23]" />
+                <a href="tel:5107497" className="hover:text-[#E31B23]">
+                  Fijo: 5107497
+                </a>
+              </li>
+              <li className="flex items-center space-x-2">
+                <DevicePhoneMobileIcon className="h-4 w-4 text-[#E31B23]" />
+                <a href="tel:0990764732" className="hover:text-[#E31B23]">
+                  Celular: 0990764732
+                </a>
+              </li>
+              <li className="flex items-center space-x-2">
+                <EnvelopeIcon className="h-4 w-4 text-[#E31B23]" />
+                <a
+                  href="mailto:contacto@usavisaecuador.com"
+                  className="hover:text-[#E31B23]"
+                >
+                  contacto@usavisaecuador.com
+                </a>
+              </li>
+              {/* … resto de Contacto */}
+            </ul>
+          </div>
+          {/* Ubicaciones */}
+          <div>
+            <h4 className="font-semibold uppercase mb-1">Ubicaciones</h4>
+            <ul className="space-y-1">
+              <li className="flex items-center space-x-2">
+                <MapPinIcon className="h-4 w-4 text-[#FFC72C]" />
+                <span>Miami, EE.UU.</span>
+              </li>
+              <li className="flex items-center space-x-2">
+                <MapPinIcon className="h-4 w-4 text-[#FFC72C]" />
+                <span>Quito, Ecuador</span>
+              </li>
+              <li className="flex items-center space-x-2">
+                <MapPinIcon className="h-4 w-4 text-[#FFC72C]" />
+                <span>Bogotá, Colombia</span>
+              </li>
+              {/* … resto de Ubicaciones */}
+            </ul>
           </div>
         </div>
       </div>
 
-      {/* Línea inferior */}
-      <div className="border-t border-[#1A2748]">
-        <div className="max-w-5xl mx-auto px-4 py-4 text-center text-gray-400 text-xs">
-          © {new Date().getFullYear()} US Immigration Services. Todos los
-          derechos reservados.
-        </div>
+      {/* Derechos reservados */}
+      <div className="text-center text-gray-400 py-2">
+        © {new Date().getFullYear()} US Immigration Services. Todos los derechos
+        reservados.
       </div>
     </footer>
   );

@@ -1,4 +1,3 @@
-// src/components/templates/HeroSection.tsx
 "use client";
 
 import React, { useEffect, useState } from "react";
@@ -14,12 +13,12 @@ import {
   ClockIcon,
   ArrowRightOnRectangleIcon,
 } from "@heroicons/react/24/outline";
+import Link from "next/link";
 
 export function HeroSection() {
   const { scrollY } = useScroll();
   const yBg = useTransform(scrollY, [0, 400], [0, 100]);
 
-  // Alternador de fondo
   const [showUS, setShowUS] = useState(true);
   useEffect(() => {
     const iv = setInterval(() => setShowUS((v) => !v), 10000);
@@ -50,7 +49,6 @@ export function HeroSection() {
             animate="animate"
             exit="exit"
             transition={{ duration: 1.5 }}
-            // usa la url de EE UU
             style={{ backgroundImage: `url(${backgrounds.us})` } as any}
           />
         ) : (
@@ -63,18 +61,14 @@ export function HeroSection() {
             animate="animate"
             exit="exit"
             transition={{ duration: 1.5 }}
-            // usa la url de Canadá
             style={{ backgroundImage: `url(${backgrounds.ca})` } as any}
           />
         )}
       </AnimatePresence>
 
-      {/* Overlay degradado semi-oscuro */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#041E42]/80 via-[#E31B23]/60 to-[#FFC72C]/80" />
 
-      {/* Contenido principal */}
       <div className="relative z-10 flex flex-col lg:flex-row items-center justify-center h-full max-w-7xl mx-auto px-4">
-        {/* Texto + CTA */}
         <div className="w-full lg:w-1/2 text-white space-y-6">
           <motion.h1
             className="text-4xl sm:text-6xl font-extrabold leading-tight"
@@ -86,6 +80,7 @@ export function HeroSection() {
             <span className="text-[#E31B23]">EE UU</span> y&nbsp;
             <span className="text-[#E31B23]">Canadá</span>
           </motion.h1>
+
           <motion.p
             className="text-lg sm:text-xl max-w-md"
             initial={{ opacity: 0, y: 40 }}
@@ -98,39 +93,42 @@ export function HeroSection() {
               ¡Tu tranquilidad es nuestra prioridad!
             </span>
           </motion.p>
+
           <motion.div
             className="flex flex-wrap gap-4 mt-6"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6, duration: 0.8 }}
           >
-            <a
-              href="#visas"
+            <Link
+              href="/catalogo?pais=usa"
               className="inline-block bg-[#041E42] text-white px-6 py-3 rounded-full hover:bg-[#E31B23] transition shadow-lg"
             >
               Visa EE UU
-            </a>
-            <a
-              href="#visas"
+            </Link>
+            <Link
+              href="/catalogo?pais=canada"
               className="inline-block bg-[#041E42] text-white px-6 py-3 rounded-full hover:bg-[#E31B23] transition shadow-lg"
             >
               Visa Canadá
-            </a>
+            </Link>
           </motion.div>
+
           <motion.div
             className="mt-8"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.9, duration: 0.8 }}
           >
-            <a
-              href="#solicitar"
+            <Link
+              href="/solicitar"
               className="inline-flex items-center bg-[#E31B23] text-white px-6 py-3 rounded-full hover:bg-[#C91B1B] transition shadow-lg"
             >
               <ArrowRightOnRectangleIcon className="h-5 w-5 mr-2" />
               Solicitar Ahora
-            </a>
+            </Link>
           </motion.div>
+
           <motion.div
             className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-6"
             initial={{ opacity: 0 }}
@@ -158,7 +156,6 @@ export function HeroSection() {
           </motion.div>
         </div>
 
-        {/* Estatua a la derecha */}
         <motion.div
           className="w-full lg:w-1/2 mt-12 lg:mt-0 flex justify-center"
           initial={{ opacity: 0, scale: 0.8 }}

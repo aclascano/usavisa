@@ -1,20 +1,11 @@
 export function VisaFilters({ setFilter }) {
   return (
-    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-      <select
-        onChange={(e) => setFilter((f) => ({ ...f, country: e.target.value }))}
-        className="border rounded px-4 py-2"
-      >
-        <option value="all">Todos los países</option>
-        <option value="usa">Estados Unidos</option>
-        <option value="canada">Canadá</option>
-      </select>
-
+    <div className="flex justify-center mb-10 mt-10">
       <input
         type="text"
         placeholder="Buscar por palabra clave..."
         onChange={(e) => setFilter((f) => ({ ...f, keyword: e.target.value }))}
-        className="border rounded px-4 py-2 w-full sm:w-64"
+        className="border border-gray-300 rounded-full px-5 py-2 w-full sm:w-80 shadow-md focus:outline-none focus:ring-2 focus:ring-primary"
       />
     </div>
   );
