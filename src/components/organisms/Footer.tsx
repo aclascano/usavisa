@@ -15,9 +15,10 @@ export function Footer() {
     <footer className="bg-white border-t border-gray-200 text-gray-700 text-xs">
       <div
         className="
-          max-w-6xl mx-auto py-6
-          grid grid-cols-1 md:grid-cols-3 gap-y-6 md:gap-y-0 md:gap-x-64 px-4 md:px-12
-        "
+    max-w-6xl mx-auto py-6 px-4
+    flex flex-col items-center space-y-6
+    md:grid md:grid-cols-3 md:space-y-0 md:items-start md:gap-x-20 md:px-12
+  "
       >
         {/* 1. Logo + frase + redes */}
         <div className="justify-self-end flex flex-col items-start space-y-1 ">

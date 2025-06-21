@@ -1,7 +1,6 @@
-// src/components/templates/SolicitarNowSection.tsx
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -14,10 +13,14 @@ import {
 export function SolicitarNowSection() {
   const router = useRouter();
   const [showModal, setShowModal] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [chosenRoute, setChosenRoute] = useState<
     "/visa-us" | "/visa-procesos" | "/visa-ca" | null
   >(null);
-  const [leaving, setLeaving] = useState(false);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const handleCircleClick = (
     route: "/visa-us" | "/visa-procesos" | "/visa-ca"
@@ -28,7 +31,14 @@ export function SolicitarNowSection() {
 
   const handleConfirm = () => {
     setShowModal(false);
-    setLeaving(true);
+    setIsLoading(true);
+
+    // Espera breve para que cierre suavemente el modal antes de redirigir
+    setTimeout(() => {
+      if (chosenRoute) {
+        router.push(chosenRoute);
+      }
+    }, 500);
   };
 
   const handleCancel = () => {
@@ -41,27 +51,32 @@ export function SolicitarNowSection() {
       id="solicitar"
       className="relative py-40 min-h-screen overflow-hidden"
     >
-      {/* fondo full-width */}
-      <div className="absolute inset-0 -z-10">
-        {/* Image en modo fill para que Next.js gestione bien la ruta */}
+      {/* Fondo animado suavemente */}
+      <motion.div
+        className="absolute inset-0 -z-10"
+        initial={{ scale: 1 }}
+        animate={{ scale: 1.03 }}
+        transition={{
+          duration: 15,
+          repeat: Infinity,
+          repeatType: "mirror",
+          ease: "easeInOut",
+        }}
+      >
         <Image
           src="/Solicitar.png"
           alt="Familia viendo avión al atardecer"
           fill
           style={{ objectFit: "cover" }}
         />
-        {/* overlay para legibilidad */}
-        <div className="absolute inset-0 bg-black/30" />
-      </div>
+        <div className="absolute inset-0 bg-black/40" />
+      </motion.div>
 
-      {/* contenido + animación fade-out antes de navegar */}
+      {/* Contenido con animación de entrada */}
       <motion.div
-        initial={{ opacity: 1 }}
-        animate={{ opacity: leaving ? 0 : 1 }}
-        transition={{ duration: 0.5 }}
-        onAnimationComplete={() => {
-          if (leaving && chosenRoute) router.push(chosenRoute);
-        }}
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
       >
         <div className="max-w-4xl mx-auto px-4 text-center space-y-8">
           <motion.h2
@@ -128,11 +143,16 @@ export function SolicitarNowSection() {
 
       {/* Modal de consentimiento */}
       {showModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/50"
+          role="dialog"
+          aria-modal="true"
+        >
           <motion.div
             className="bg-white rounded-xl max-w-md mx-4 p-6"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, y: -20, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -20, scale: 0.95 }}
             transition={{ duration: 0.3 }}
           >
             <h3 className="text-xl font-semibold">Aviso de Privacidad</h3>
@@ -155,6 +175,40 @@ export function SolicitarNowSection() {
                 Sí, acepto
               </button>
             </div>
+          </motion.div>
+        </div>
+      )}
+
+      {/* Pantalla de carga */}
+      {isLoading && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.4 }}
+            className="flex flex-col items-center space-y-4 text-white"
+          >
+            <svg
+              className="animate-spin h-10 w-10 text-white"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <circle
+                className="opacity-25"
+                cx="12"
+                cy="12"
+                r="10"
+                stroke="currentColor"
+                strokeWidth="4"
+              ></circle>
+              <path
+                className="opacity-75"
+                fill="currentColor"
+                d="M4 12a8 8 0 018-8v8H4z"
+              ></path>
+            </svg>
+            <p className="text-lg font-medium">Cargando formulario…</p>
           </motion.div>
         </div>
       )}

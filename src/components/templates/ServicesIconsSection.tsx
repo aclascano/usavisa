@@ -12,46 +12,74 @@ import {
 } from "@heroicons/react/24/outline";
 
 const services = [
-  { label: "Agendamiento de citas", icon: CalendarDaysIcon },
-  { label: "Pagos consulares", icon: BriefcaseIcon },
-  { label: "Diligenciamiento de formularios", icon: DocumentTextIcon },
-  { label: "Asesoría virtual", icon: ChatBubbleOvalLeftEllipsisIcon },
-  { label: "Servicios post-visa", icon: HomeModernIcon },
-  { label: "Asesoría para mascotas", icon: TruckIcon },
+  {
+    label: "Agendamiento de Citas",
+    icon: CalendarDaysIcon,
+    description: "Programa tu cita consular de forma rápida y segura.",
+  },
+  {
+    label: "Pagos Consulares",
+    icon: BriefcaseIcon,
+    description: "Gestionamos tus pagos con total garantía y respaldo.",
+  },
+  {
+    label: "Diligenciamiento de Formularios",
+    icon: DocumentTextIcon,
+    description: "Te ayudamos a llenar los formularios de forma correcta.",
+  },
+  {
+    label: "Asesoría Virtual",
+    icon: ChatBubbleOvalLeftEllipsisIcon,
+    description: "Atención personalizada desde la comodidad de tu hogar.",
+  },
+  {
+    label: "Servicios Post-Visa",
+    icon: HomeModernIcon,
+    description: "Apoyo en tus gestiones una vez obtenida tu visa.",
+  },
+  {
+    label: "Asesoría para Mascotas",
+    icon: TruckIcon,
+    description: "Viaja con tu mascota cumpliendo todos los requisitos.",
+  },
 ];
 
 export function ServicesIconsSection() {
   return (
-    <section id="servicios" className="py-16 bg-white">
-      <div className="max-w-7xl mx-auto px-4 text-center">
+    <section
+      id="servicios"
+      className="py-24 bg-gradient-to-b from-white via-blue-50 to-white"
+    >
+      <div className="max-w-7xl mx-auto px-6">
         <motion.h2
-          className="text-3xl font-bold text-primary mb-10"
-          initial={{ opacity: 0, y: 40 }}
+          className="text-4xl font-bold text-center text-primary mb-16"
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.7 }}
         >
           Nuestros Servicios
         </motion.h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
           {services.map((svc, idx) => {
             const Icon = svc.icon;
             return (
               <motion.div
                 key={svc.label}
-                className="flex flex-col items-center space-y-4 bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition"
-                initial={{ opacity: 0, y: 30 }}
+                className="bg-white rounded-2xl p-6 text-center shadow-md hover:shadow-xl transition-all duration-300"
+                initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.15, duration: 0.6 }}
               >
-                <Icon className="h-10 w-10 text-[#E31B23]" />
-                <h3 className="text-lg font-medium text-neutralDark">
+                <div className="flex justify-center items-center w-16 h-16 mx-auto rounded-full bg-[#E31B23]/10 mb-4">
+                  <Icon className="h-8 w-8 text-[#E31B23]" />
+                </div>
+                <h3 className="text-xl font-semibold text-neutralDark mb-2">
                   {svc.label}
                 </h3>
-                <p className="text-gray-600">
-                  Descripción breve del servicio que ofrecemos en esta área.
-                </p>
+                <p className="text-gray-600 text-sm">{svc.description}</p>
               </motion.div>
             );
           })}

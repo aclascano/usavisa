@@ -2,7 +2,10 @@
   "name": "visa-app",
   "version": "1.0.0",
   "private": true,
+  "homepage": "http:/alascano.github.io/usavisa",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d out",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -33,6 +36,7 @@
     "autoprefixer": "^10.4.14",
     "eslint": "8.45.0",
     "eslint-config-next": "13.4.4",
+    "gh-pages": "^6.3.0",
     "postcss": "^8.4.27",
     "tailwindcss": "^3.4.4",
     "typescript": "5.1.6"

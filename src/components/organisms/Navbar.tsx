@@ -19,6 +19,7 @@ const navItems = [
 export function Navbar() {
   const path = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setIsScrolled(window.scrollY > 50);
@@ -37,7 +38,7 @@ export function Navbar() {
         }
       `}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
         {/* Logo */}
         <div className="flex-shrink-0">
           <AnimatePresence>
@@ -53,7 +54,7 @@ export function Navbar() {
                   <img
                     src="/logo.png"
                     alt="VisaApp Logo"
-                    className="h-24 w-auto cursor-pointer"
+                    className="h-24 w-auto md:h-20  cursor-pointer"
                   />
                 </Link>
               </motion.div>
@@ -124,9 +125,40 @@ export function Navbar() {
 
         {/* Menú Mobile */}
         <div className="md:hidden">
-          <button className={isScrolled ? "text-gray-700" : "text-white"}>
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className={isScrolled ? "text-gray-700" : "text-white"}
+          >
             ☰
           </button>
+          {isOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              className="absolute top-full left-0 w-full bg-white shadow-md md:hidden z-40"
+            >
+              <nav className="flex flex-col p-4 space-y-2">
+                {navItems.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="text-gray-700 hover:text-[#E31B23] font-medium"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+                <Link
+                  href="/solicitar"
+                  className="bg-[#E31B23] text-white text-center rounded-full py-2 mt-2"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Solicitar Ahora
+                </Link>
+              </nav>
+            </motion.div>
+          )}
         </div>
       </div>
     </header>

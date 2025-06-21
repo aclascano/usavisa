@@ -1,4 +1,12 @@
-export function VisaFilters({ setFilter }) {
+// src/components/molecules/VisaFilters.tsx
+import React, { Dispatch, SetStateAction } from "react";
+import { Filter } from "../../types/filter";
+
+interface VisaFiltersProps {
+  setFilter: Dispatch<SetStateAction<Filter>>;
+}
+
+export function VisaFilters({ setFilter }: VisaFiltersProps) {
   return (
     <div className="flex justify-center mb-10 mt-10">
       <input

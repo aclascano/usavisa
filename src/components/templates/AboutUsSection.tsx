@@ -5,44 +5,55 @@ import { motion } from "framer-motion";
 
 export function AboutUsSection() {
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-5xl mx-auto px-4 space-y-10">
+    <section className="py-24 bg-white">
+      <div className="max-w-6xl mx-auto px-6">
         <motion.h2
-          className="text-4xl font-bold text-primary text-center"
+          className="text-4xl font-bold text-primary text-center mb-16"
           initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
           ¿Quiénes Somos?
         </motion.h2>
 
         <motion.div
-          className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.3, duration: 0.7 }}
+          className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2, duration: 0.7 }}
         >
-          <div className="space-y-6">
-            <p className="text-lg text-gray-700">
-              En <span className="font-semibold text-secondary">USAVISA</span>, somos un equipo de
-              profesionales dedicados a simplificar tu proceso de inmigración.
+          <div className="space-y-6 text-gray-700 text-lg leading-relaxed">
+            <p>
+              En <span className="text-secondary font-semibold">USAVISA</span>,
+              somos más que una empresa: somos un equipo humano comprometido con
+              hacer de tu proceso migratorio una experiencia clara y sin estrés.
             </p>
-            <p className="text-lg text-gray-700">
-              Con más de <span className="font-semibold text-accent">10 años de experiencia</span>, 
-              te brindamos asesoría personalizada y acompañamiento en cada paso, desde la selección de documentos 
-              hasta la entrevista consular.
+            <p>
+              Con más de{" "}
+              <span className="text-accent font-semibold">
+                10 años de trayectoria
+              </span>
+              , hemos ayudado a miles de personas a cumplir su sueño de viajar,
+              estudiar o establecerse en el extranjero.
             </p>
-            <p className="text-lg text-gray-700">
-              Nuestro objetivo es que tengas una experiencia <span className="font-semibold">segura, ágil y 
-              transparente</span>, sin complicaciones ni demoras innecesarias.
+            <p>
+              Ofrecemos una atención cercana, profesional y totalmente
+              personalizada, porque tu historia migratoria es única y merece ser
+              tratada como tal.
             </p>
           </div>
 
           <div className="flex justify-center">
-            <img
-              src="/team-photo.jpg" // Pon aquí una imagen de equipo o similar en /public/
+            <motion.img
+              src="/team-photo.jpg"
               alt="Nuestro equipo"
-              className="rounded-xl shadow-lg max-w-full h-auto"
+              className="rounded-xl shadow-xl w-full max-w-md object-cover"
+              initial={{ scale: 0.9, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              viewport={{ once: true }}
             />
           </div>
         </motion.div>

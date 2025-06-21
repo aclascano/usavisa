@@ -4,7 +4,7 @@
     "id": "visa-o",
     "title": "Visa O (Personas con habilidades extraordinarias)",
     "country": "usa",
-    "image": "/images/visas/visa-o.jpg",
+    "image": "/images/visas/visaO.png",
     "tags": [
       "Talento",
       "Extraordinario",
@@ -19,7 +19,7 @@
     "id": "visa-q",
     "title": "Visa Q (Intercambio cultural internacional)",
     "country": "usa",
-    "image": "/images/visas/visa-q.jpg",
+    "image": "/images/visas/visaQ.png",
     "tags": [
       "Cultura",
       "Intercambio",
@@ -32,7 +32,7 @@
     "id": "visa-l",
     "title": "Visa L (Transferencia dentro de la misma empresa)",
     "country": "usa",
-    "image": "/images/visas/visa-l.jpg",
+    "image": "/images/visas/visaL.png",
     "tags": [
       "Corporativo",
       "Ejecutivos",
@@ -46,7 +46,7 @@
     "id": "visa-i",
     "title": "Visa I (Representantes de Medios de Comunicación)",
     "country": "usa",
-    "image": "/images/visas/visa-i.jpg",
+    "image": "/images/visas/visaI.png",
     "tags": [
       "Periodismo",
       "Medios",
@@ -59,7 +59,7 @@
     "id": "visa-p",
     "title": "Visa P (Artistas, Animadores y Atletas Reconocidos)",
     "country": "usa",
-    "image": "/images/visas/visa-p.jpg",
+    "image": "/images/visas/visaP.png",
     "tags": [
       "Artistas",
       "Deportistas",
@@ -72,7 +72,7 @@
     "id": "h1b",
     "title": "Visa H-1B – Trabajador Profesional Especializado",
     "country": "usa",
-    "image": "/images/visas/h1b.jpg",
+    "image": "/images/visas/visah1b.png",
     "tags": [
       "trabajo",
       "especialización",
@@ -95,7 +95,7 @@
     "id": "f1",
     "title": "Visa F-1 – Visa de Estudiante",
     "country": "usa",
-    "image": "/images/visas/f1.jpg",
+    "image": "/images/visas/visaf1.png",
     "tags": [
       "estudios",
       "educación",
@@ -118,7 +118,7 @@
     "id": "h2a",
     "title": "Visa H-2A – Trabajador Agrícola Temporal",
     "country": "usa",
-    "image": "/images/visas/h2a.jpg",
+    "image": "/images/visas/visah2a.png",
     "tags": [
       "trabajo",
       "temporal",
@@ -140,7 +140,7 @@
     "id": "visa-m",
     "title": "Visa M (Estudios vocacionales y técnicos)",
     "country": "usa",
-    "image": "/images/visas/visa-m.jpg",
+    "image": "/images/visas/visaM.png",
     "tags": [
       "Estudios",
       "Técnico",
@@ -163,7 +163,7 @@
     "id": "visa-c",
     "title": "Visa C (Tránsito por Estados Unidos)",
     "country": "usa",
-    "image": "/images/visas/visa-c.jpg",
+    "image": "/images/visas/visaC.png",
     "tags": [
       "Tránsito",
       "Conexión",
@@ -183,7 +183,7 @@
     "id": "visa-k1",
     "title": "Visa K-1 (Visa de prometido/a)",
     "country": "usa",
-    "image": "/images/visas/visa-k1.jpg",
+    "image": "/images/visas/visaK1.png",
     "tags": [
       "Matrimonio",
       "Prometido",
@@ -203,7 +203,7 @@
     "id": "visa-k2",
     "title": "Visa K-2 (Hijos del prometido/a con visa K-1)",
     "country": "usa",
-    "image": "/images/visas/visa-k2.jpg",
+    "image": "/images/visas/visaK2.png",
     "tags": [
       "Familia",
       "Prometido",
@@ -223,7 +223,7 @@
     "id": "visa-k3",
     "title": "Visa K-3 (Cónjuges de ciudadanos estadounidenses)",
     "country": "usa",
-    "image": "/images/visas/visa-k3.jpg",
+    "image": "/images/visas/visaK3.png",
     "tags": [
       "Cónyuge",
       "Reunificación",
@@ -242,7 +242,7 @@
     "id": "visa-ir",
     "title": "Visa de Petición Familiar (IR - Inmigrante Relativo Inmediato)",
     "country": "usa",
-    "image": "/images/visas/visa-ir.jpg",
+    "image": "/images/visas/visaIr.png",
     "tags": [
       "Familia",
       "Residencia",
@@ -263,7 +263,7 @@
     "id": "asilo",
     "title": "Asilo Político en usa",
     "country": "usa",
-    "image": "/images/visas/asilo.jpg",
+    "image": "/images/visas/asilo.png",
     "tags": [
       "Protección",
       "Refugio",
@@ -282,7 +282,7 @@
     "id": "waiver",
     "title": "Perdón Migratorio (Waiver)",
     "country": "usa",
-    "image": "/images/visas/waiver.jpg",
+    "image": "/images/visas/visaWaiver.png",
     "tags": [
       "Exención",
       "Inmigración",
@@ -301,7 +301,7 @@
     "id": "visa-e",
     "title": "Visa E (Inversionista)",
     "country": "usa",
-    "image": "/images/visas/visa-e.jpg",
+    "image": "/images/visas/visaE.png",
     "tags": [
       "Negocios",
       "Inversión",
@@ -320,7 +320,7 @@
     "id": "visa-b1-deportistas",
     "title": "Visa B-1 (Deportistas)",
     "country": "usa",
-    "image": "/images/visas/visa-b1-sports.jpg",
+    "image": "/images/visas/visa-b1-sports.png",
     "tags": [
       "Deporte",
       "Eventos",
@@ -339,7 +339,7 @@
     "id": "ca-turismo",
     "title": "Visa de Turismo",
     "country": "canada",
-    "image": "/images/visas/ca-turismo.jpg",
+    "image": "/images/visas/ca-turismo.png",
     "tags": ["turismo", "viaje", "vacaciones", "visita"],
     "description": "Descubre las maravillas naturales y culturales de Canadá.",
     "details": "Esta visa te permite visitar Canadá por un período determinado con fines turísticos. Es ideal para explorar paisajes, ciudades y cultura canadiense."
@@ -348,7 +348,7 @@
     "id": "ca-estudiante",
     "title": "Visa de Estudiante",
     "country": "canada",
-    "image": "/images/visas/ca-estudiante.jpg",
+    "image": "/images/visas/ca-estudiante.png",
     "tags": ["estudios", "universidad", "educación", "canadá"],
     "description": "Persigue tus estudios en instituciones educativas canadienses de renombre.",
     "details": "La visa de estudiante permite cursar programas académicos en Canadá, con posibilidad de trabajo de medio tiempo durante los estudios y tiempo completo en vacaciones."
@@ -357,7 +357,7 @@
     "id": "ca-trabajo",
     "title": "Visa de Trabajo",
     "country": "canada",
-    "image": "/images/visas/ca-trabajo.jpg",
+    "image": "/images/visas/ca-trabajo.png",
     "tags": ["trabajo", "empleo", "canadá", "laboral"],
     "description": "Busca oportunidades laborales en Canadá.",
     "details": "Esta visa permite trabajar temporalmente en Canadá. Requiere oferta laboral previa o programas de trabajo específicos aprobados por el gobierno canadiense."
@@ -366,7 +366,7 @@
     "id": "ca-residencia",
     "title": "Visa de Residencia Permanente",
     "country": "canada",
-    "image": "/images/visas/ca-residencia.jpg",
+    "image": "/images/visas/ca-residencia.png",
     "tags": ["residencia", "permanente", "emigrar", "canadá"],
     "description": "Oportunidad para establecerse en Canadá de forma permanente.",
     "details": "Otorga el estatus de residente permanente. Aplica para trabajadores calificados, inversionistas, familiares patrocinados, entre otros programas de inmigración."
@@ -375,7 +375,7 @@
     "id": "ca-familiar",
     "title": "Visa de Reunificación Familiar",
     "country": "canada",
-    "image": "/images/visas/ca-familiar.jpg",
+    "image": "/images/visas/ca-familiar.png",
     "tags": ["familia", "reunión", "patrocinio", "canadá"],
     "description": "Reúnete con tus seres queridos que ya están en Canadá.",
     "details": "Permite a ciudadanos o residentes permanentes patrocinar a familiares cercanos como cónyuges, padres o hijos dependientes para que vivan en Canadá."
@@ -384,7 +384,7 @@
     "id": "ca-inversionista",
     "title": "Visa Empresario / Inversionista",
     "country": "canada",
-    "image": "/images/visas/ca-inversionista.jpg",
+    "image": "/images/visas/ca-inversionista.png",
     "tags": ["negocios", "inversión", "empresa", "canadá"],
     "description": "Abre las puertas para el éxito empresarial en Canadá.",
     "details": "Diseñada para personas que desean iniciar un negocio o invertir en Canadá. Requiere un plan de negocio viable y fondos comprobables."

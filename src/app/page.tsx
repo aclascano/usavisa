@@ -1,4 +1,5 @@
 // src/app/page.tsx
+
 import React from "react";
 import { HeroSection } from "../components/templates/HeroSection";
 import { ServicesIconsSection } from "../components/templates/ServicesIconsSection";
@@ -12,36 +13,37 @@ import { ContactFormSection } from "../components/templates/ContactFormSection";
 export default function HomePage() {
   return (
     <>
-      {/* Secciones identificadas con id para anclas */}
+      {/* Hero mantiene su fondo independiente */}
       <section id="inicio">
         <HeroSection />
       </section>
 
-      <section id="servicios">
-        <ServicesIconsSection />
-      </section>
+      {/* Fondo unificado desde aquí */}
+      <div className="bg-neutral-50">
+        <section id="servicios">
+          <ServicesIconsSection />
+        </section>
 
-      <section id="acerca">
-        <AboutUsSection />
-      </section>
+        <section id="acerca">
+          <AboutUsSection />
+        </section>
 
-      <section id="empresa">
-        <CompanyRegistrationSection />
-      </section>
+        <section id="empresa">
+          <CompanyRegistrationSection />
+        </section>
 
-      <section id="why">
-        <WhyChooseUsSection />
-      </section>
+        <section id="why">
+          <WhyChooseUsSection />
+        </section>
 
-      <section id="contacto">
-        <ContactFormSection />
-      </section>
+        <section id="contacto">
+          <ContactFormSection />
+        </section>
 
-      {/* Sección “Solicitar Ahora” anclada */}
-      <section id="solicitar">
-        {/* Aquí podrías duplicar el MidCTA o un componente específico para “Solicitar Ahora” */}
-        <MidCTASection />
-      </section>
+        <section id="solicitar">
+          <MidCTASection />
+        </section>
+      </div>
     </>
   );
 }

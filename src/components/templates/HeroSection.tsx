@@ -43,25 +43,23 @@ export function HeroSection() {
           <motion.div
             key="bg-us"
             className="absolute inset-0 bg-cover bg-center"
-            style={{ y: yBg }}
             variants={fade}
             initial="initial"
             animate="animate"
             exit="exit"
             transition={{ duration: 1.5 }}
-            style={{ backgroundImage: `url(${backgrounds.us})` } as any}
+            style={{ y: yBg, backgroundImage: `url(${backgrounds.us})` } as any}
           />
         ) : (
           <motion.div
             key="bg-ca"
             className="absolute inset-0 bg-cover bg-center"
-            style={{ y: yBg }}
             variants={fade}
             initial="initial"
             animate="animate"
             exit="exit"
             transition={{ duration: 1.5 }}
-            style={{ backgroundImage: `url(${backgrounds.ca})` } as any}
+            style={{ y: yBg, backgroundImage: `url(${backgrounds.ca})` } as any}
           />
         )}
       </AnimatePresence>
@@ -161,7 +159,9 @@ export function HeroSection() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 1.5, duration: 0.8 }}
-        ></motion.div>
+        >
+          {/* Aquí puedes poner tu ilustración o componente gráfico */}
+        </motion.div>
       </div>
     </section>
   );

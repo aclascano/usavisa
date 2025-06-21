@@ -1,9 +1,17 @@
+// src/components/molecules/VisaModal.tsx
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
 import { XMarkIcon, PaperAirplaneIcon } from "@heroicons/react/24/solid";
 import Link from "next/link";
-export function VisaModal({ visa, onClose }) {
+import { Visa } from "../../types/visa";
+
+interface VisaModalProps {
+  visa: Visa | null;
+  onClose: () => void;
+}
+
+export function VisaModal({ visa, onClose }: VisaModalProps) {
   if (!visa) return null;
 
   return (
@@ -25,7 +33,7 @@ export function VisaModal({ visa, onClose }) {
             className="absolute top-2 right-2 text-gray-600 hover:text-red-500 text-xl"
             onClick={onClose}
           >
-            ×
+            <XMarkIcon className="h-6 w-6" />
           </button>
 
           <img
